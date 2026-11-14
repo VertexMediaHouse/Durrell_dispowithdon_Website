@@ -1,0 +1,300 @@
+/* Dispo With Don — global styles (brand: #141414 / #FF792E / #FFFFFF / #66686D) */
+body {
+  margin: 0;
+  background: #141414;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  color: #f4f4f2;
+  text-decoration: none;
+}
+a:hover {
+  color: #f4f4f2;
+}
+::selection {
+  background: #ff792e;
+  color: #141414;
+}
+.ph {
+  background:
+    radial-gradient(90% 70% at 85% 0%, rgba(255, 121, 46, 0.16), transparent 60%),
+    linear-gradient(160deg, #202022 0%, #151516 100%);
+}
+.ph2 {
+  background:
+    radial-gradient(80% 80% at 10% 100%, rgba(255, 121, 46, 0.12), transparent 60%),
+    linear-gradient(200deg, #1e1e20 0%, #141415 100%);
+}
+.btn-o {
+  transition: background 0.2s ease;
+}
+.btn-o:hover {
+  background: #ff8f4f !important;
+}
+.btn-g {
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.btn-g:hover {
+  border-color: #ff792e !important;
+  background: rgba(255, 121, 46, 0.06) !important;
+}
+.nav-a {
+  color: #a9abb0;
+  transition: color 0.2s ease;
+}
+.nav-a:hover {
+  color: #f4f4f2;
+}
+.lnk {
+  color: #f4f4f2;
+  border-bottom: 1px solid #3a3b3f;
+  padding-bottom: 4px;
+  transition: border-color 0.2s ease;
+}
+.lnk:hover {
+  border-color: #ff792e;
+}
+.fld {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #343437;
+  border-radius: 0;
+  padding: 12px 0 14px;
+  color: #f4f4f2;
+  font:
+    400 16px/1.3 Inter,
+    system-ui,
+    sans-serif;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s ease;
+}
+.fld::placeholder {
+  color: #6e7075;
+}
+.fld:focus,
+.money:focus-within {
+  border-color: #ff792e;
+}
+textarea.fld {
+  border: 1px solid #343437;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.money {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #343437;
+}
+.money input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: #f4f4f2;
+  font:
+    400 16px Inter,
+    system-ui,
+    sans-serif;
+  padding: 12px 0 14px 8px;
+}
+.money input::placeholder {
+  color: #6e7075;
+}
+select.fld {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #a9abb0 50%), linear-gradient(135deg, #a9abb0 50%, transparent 50%);
+  background-position:
+    calc(100% - 10px) 50%,
+    calc(100% - 4px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 28px;
+}
+select option {
+  background: #1a1a1b;
+  color: #f4f4f2;
+}
+input[type='date'].fld {
+  color-scheme: dark;
+}
+.srch {
+  background: transparent;
+  border: 0;
+  color: #f4f4f2;
+  font:
+    500 15px Inter,
+    system-ui,
+    sans-serif;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: #ff792e;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  flex: none;
+}
+.chip {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid #343437;
+  border-radius: 10px;
+  color: #d4d5d8;
+  font:
+    400 14px Inter,
+    system-ui,
+    sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.chip:hover {
+  border-color: #ff792e;
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.drop {
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.drop:hover {
+  border-color: #ff792e !important;
+}
+.drop:focus-within {
+  border-color: #ff792e !important;
+}
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .plus {
+  transform: rotate(45deg);
+  background: #ff792e;
+  color: #141414;
+  border-color: #ff792e;
+}
+.plus {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+.tick {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  animation: tick 60s linear infinite;
+}
+.mq {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  animation: tick 70s linear infinite;
+}
+@keyframes tick {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tick,
+  .mq {
+    animation: none;
+  }
+}
+.card .lift {
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.card:hover .lift {
+  transform: scale(1.02);
+}
+.card:hover .arr {
+  background: #ff792e;
+  color: #141414;
+  border-color: #ff792e;
+}
+.arr {
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #3a3b3f;
+}
+.pg:hover {
+  border-color: #ff792e !important;
+}
+:focus-visible {
+  outline: 1px solid #ff792e;
+  outline-offset: 4px;
+}
+/* Photos inside the .ph / .ph2 placeholder frames: fill the frame, keep the
+   existing rounded corners, and sit under the label spans layered on top. */
+.ph-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  /* Darken slightly so the overlaid uppercase labels stay readable. */
+  filter: brightness(0.78) saturate(0.95);
+  transition: filter 0.3s ease;
+}
+.card:hover .ph-img {
+  filter: brightness(0.92) saturate(1.02);
+}
+/* Ticker: hovering a phrase fills it one character at a time. Each char
+   carries its own --d delay (set inline by index), so the fill sweeps
+   left-to-right; leaving resets every char at once with no delay. */
+.tick-w {
+  display: inline-flex;
+}
+.tick-c {
+  color: inherit;
+  transition: color 0.18s ease;
+  transition-delay: 0ms;
+}
+.tick-w:hover .tick-c {
+  color: #ff792e;
+  transition-delay: var(--d, 0ms);
+}
+.mq .tick-w:hover .tick-c {
+  -webkit-text-stroke: 1px #ff792e;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tick-w:hover .tick-c {
+    transition: none;
+    transition-delay: 0s;
+  }
+}
