@@ -150,37 +150,6 @@ export default function DealDetail() {
             }}
           >
             <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman showing the covered porch and gabled roof" width={1400} height={1000} priority />
-            <span
-              style={{
-                position: 'absolute',
-                left: '18px',
-                bottom: '16px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#8A8C91',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8A8C91"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-              Front exterior
-            </span>
           </div>
           <div style={{ display: 'grid', gridTemplateRows: 'repeat(2, minmax(0, 1fr))', gap: '16px' }}>
             <div
@@ -194,37 +163,6 @@ export default function DealDetail() {
               }}
             >
               <Img src={img.kitchen} alt="Updated kitchen with wood cabinets and stainless steel appliances" width={900} height={700} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Kitchen
-              </span>
             </div>
             <div
               className="ph"
@@ -237,37 +175,6 @@ export default function DealDetail() {
               }}
             >
               <Img src={img.living} alt="Living room with hardwood floors and natural light from the front windows" width={900} height={700} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Living room
-              </span>
               <a
                 className="btn-g"
                 href="#"
@@ -317,7 +224,7 @@ export default function DealDetail() {
           display: 'flex',
           flexWrap: 'wrap',
           gap: '64px',
-          alignItems: 'flex-start',
+          alignItems: 'stretch',
         }}
       >
         <div style={{ flex: '999 1 600px', minWidth: '0', display: 'flex', flexDirection: 'column', gap: '80px' }}>
@@ -1067,6 +974,8 @@ export default function DealDetail() {
               display: 'flex',
               alignItems: 'center',
               gap: '16px',
+              /* Sits at the bottom so the sidebar ends level with the main column. */
+              marginTop: 'auto',
             }}
           >
             <span
@@ -1182,37 +1091,6 @@ export default function DealDetail() {
                   }}
                 >
                   <Img src={img.ranch} alt="Maple Ridge Ranch, a comparable single-story wholesale deal" width={1000} height={800} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      left: '18px',
-                      bottom: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      color: '#8A8C91',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#8A8C91"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect width="18" height="18" x="3" y="3" rx="2" />
-                      <circle cx="9" cy="9" r="2" />
-                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                    </svg>
-                    Single-family
-                  </span>
                   <span
                     style={{
                       position: 'absolute',
@@ -1349,37 +1227,6 @@ export default function DealDetail() {
                   <span
                     style={{
                       position: 'absolute',
-                      left: '18px',
-                      bottom: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      color: '#8A8C91',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#8A8C91"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect width="18" height="18" x="3" y="3" rx="2" />
-                      <circle cx="9" cy="9" r="2" />
-                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                    </svg>
-                    Single-family
-                  </span>
-                  <span
-                    style={{
-                      position: 'absolute',
                       top: '16px',
                       left: '16px',
                       display: 'inline-flex',
@@ -1510,37 +1357,6 @@ export default function DealDetail() {
                   }}
                 >
                   <Img src={img.modern} alt="Westbrook Modern, a comparable contemporary wholesale deal" width={1000} height={800} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      left: '18px',
-                      bottom: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      color: '#8A8C91',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#8A8C91"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect width="18" height="18" x="3" y="3" rx="2" />
-                      <circle cx="9" cy="9" r="2" />
-                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                    </svg>
-                    Multifamily
-                  </span>
                   <span
                     style={{
                       position: 'absolute',

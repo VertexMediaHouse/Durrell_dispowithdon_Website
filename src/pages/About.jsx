@@ -129,37 +129,6 @@ export default function About() {
             }}
           >
             <Img src={img.team_mtg} alt="The Dispo With Don team reviewing active wholesale deals together" width={1200} height={900} priority />
-            <span
-              style={{
-                position: 'absolute',
-                left: '18px',
-                bottom: '16px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#8A8C91',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8A8C91"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-              Portrait of Don
-            </span>
           </div>
           <div
             style={{
@@ -691,37 +660,6 @@ export default function About() {
               }}
             >
               <Img src={img.portrait_m} alt="Portrait of Don, Founder and Lead Dispositions at Dispo With Don" width={800} height={800} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Portrait
-              </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
@@ -751,37 +689,6 @@ export default function About() {
               }}
             >
               <Img src={img.portrait_w} alt="Portrait of the Buyer Relations lead at Dispo With Don" width={800} height={800} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Portrait
-              </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
@@ -811,37 +718,6 @@ export default function About() {
               }}
             >
               <Img src={img.portrait_m2} alt="Portrait of the Deal Marketing lead at Dispo With Don" width={800} height={800} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Portrait
-              </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
@@ -871,37 +747,6 @@ export default function About() {
               }}
             >
               <Img src={img.portrait_w2} alt="Portrait of the Transaction Coordination lead at Dispo With Don" width={800} height={800} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Portrait
-              </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>

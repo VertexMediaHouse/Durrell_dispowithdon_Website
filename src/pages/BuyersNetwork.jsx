@@ -112,7 +112,7 @@ export default function BuyersNetwork() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
           gap: '72px',
-          alignItems: 'start',
+          alignItems: 'stretch',
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -340,44 +340,15 @@ export default function BuyersNetwork() {
             className="ph2"
             style={{
               position: 'relative',
-              height: '280px',
+              /* Grows to match the taller form column so both sides end level. */
+              flex: '1 1 auto',
+              minHeight: '280px',
               borderRadius: '18px',
               overflow: 'hidden',
               border: '1px solid #262628',
             }}
           >
             <Img src={img.keys} alt="Investor receiving the keys after closing on a wholesale deal" width={1200} height={800} />
-            <span
-              style={{
-                position: 'absolute',
-                left: '18px',
-                bottom: '16px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#8A8C91',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8A8C91"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-              Investor walkthrough
-            </span>
           </div>
         </div>
         <form

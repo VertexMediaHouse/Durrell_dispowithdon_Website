@@ -484,37 +484,6 @@ export default function Contact() {
             }}
           >
             <Img src={img.office} alt="The Dispo With Don office where the dispositions team works deals" width={1200} height={800} />
-            <span
-              style={{
-                position: 'absolute',
-                left: '18px',
-                bottom: '16px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#8A8C91',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8A8C91"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-              Office
-            </span>
           </div>
           <div
             style={{

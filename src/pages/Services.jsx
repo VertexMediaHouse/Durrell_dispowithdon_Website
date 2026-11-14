@@ -238,37 +238,6 @@ export default function Services() {
               }}
             >
               <Img src={img.handshake} alt="Dispositions team matching a wholesale contract with a cash buyer" width={1200} height={900} priority />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Wholesale Dispositions
-              </span>
             </div>
           </div>
         </div>
@@ -397,37 +366,6 @@ export default function Services() {
               }}
             >
               <Img src={img.phone_call} alt="Buyer outreach specialist calling verified cash buyers about a new deal" width={1200} height={900} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Buyer Outreach
-              </span>
             </div>
           </div>
         </div>
@@ -556,37 +494,6 @@ export default function Services() {
               }}
             >
               <Img src={img.marketing} alt="Property marketing assets and comparable sales prepared for a deal launch" width={1200} height={900} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Deal Marketing
-              </span>
             </div>
           </div>
         </div>
@@ -715,37 +622,6 @@ export default function Services() {
               }}
             >
               <Img src={img.signing} alt="Transaction coordinator reviewing closing paperwork with a title company" width={1200} height={900} />
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '16px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  color: '#8A8C91',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8A8C91"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                Transaction Coordination
-              </span>
             </div>
           </div>
         </div>
