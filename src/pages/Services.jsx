@@ -3,6 +3,7 @@ import { usePageTitle } from '../lib/usePageTitle'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Img from '../components/Img'
+import FeeSplitCalculator from '../components/FeeSplitCalculator'
 import { img } from '../lib/images'
 
 export default function Services() {
@@ -11,13 +12,10 @@ export default function Services() {
     <>
       <Header active="Services" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '72px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
@@ -102,15 +100,12 @@ export default function Services() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '120px',
+          paddingTop: 'var(--section-pad)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '150px',
+          gap: 'var(--section-pad)',
         }}
       >
         <div
@@ -627,7 +622,7 @@ export default function Services() {
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -667,298 +662,107 @@ export default function Services() {
             </h2>
           </div>
         </div>
+
+        {/* Upgraded 4 Process Cards */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            borderTop: '1px solid #262628',
-            borderBottom: '1px solid #262628',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: '24px',
           }}
         >
-          <div style={{ padding: '36px 28px 36px 0px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <span
-              style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
-                borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF792E"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                <path d="M12 12v6" />
-                <path d="m15 15-3-3-3 3" />
-              </svg>
-            </span>
-            <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>
-              Step 01
-            </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+          <div className="how-it-works-card">
+            <span className="step-num">01</span>
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
               Submit
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              Send the contract, numbers and photos.
+              Upload your contracted property address, purchase price, target buyer price, and photos in 2 minutes.
             </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
-                borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF792E"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                <path d="m9 14 2 2 4-4" />
-              </svg>
-            </span>
-            <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>
-              Step 02
-            </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+
+          <div className="how-it-works-card">
+            <span className="step-num">02</span>
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
               Review
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              Same-day honest read on price and scope.
+              We provide a same-day honest underwriting valuation, verified comps analysis, and marketing game plan.
             </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
-                borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF792E"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m3 11 18-5v12L3 14v-3z" />
-                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-              </svg>
-            </span>
-            <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>
-              Step 03
-            </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+
+          <div className="how-it-works-card">
+            <span className="step-num">03</span>
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
               Market
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              Deal package out to matched buyers.
+              Your deal packet is broadcast directly to 1,800+ vetted buyers matching that submarket and asset type.
             </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
-                borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF792E"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-                <path d="m21 3 1 11h-2" />
-                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-                <path d="M3 4h8" />
-              </svg>
-            </span>
-            <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>
-              Step 04
-            </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+
+          <div className="how-it-works-card">
+            <span className="step-num">04</span>
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
               Close
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              Title, EMD and deadlines through funding.
+              We collect buyer earnest money, execute assignments, and coordinate title through funding and payout.
             </span>
           </div>
         </div>
       </section>
+
+      {/* Upgraded Pricing & Interactive Calculator */}
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
-        <div
-          style={{
-            borderRadius: '24px',
-            border: '1px solid #262628',
-            background: '#1A1A1B',
-            padding: 'clamp(32px, 5vw, 80px)',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
-            gap: '64px',
-            alignItems: 'center',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <span
-              style={{
-                alignSelf: 'flex-start',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '14px',
-                color: '#FF792E',
-                font: '500 12px Inter, system-ui, sans-serif',
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <span style={{ color: '#A9ABB0' }}>(06)</span>
-              <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
-              Pricing
-            </span>
-            <h2
-              style={{
-                margin: '0',
-                font: "400 clamp(42px, 4.8vw, 72px)/1.0 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.015em',
-              }}
-            >
-              Simple, fair and <em style={{ fontStyle: 'italic', color: '#FF792E' }}>in your favor.</em>
-            </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '680px' }}>
+              <span
+                style={{
+                  alignSelf: 'flex-start',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '14px',
+                  color: '#FF792E',
+                  font: '500 12px Inter, system-ui, sans-serif',
+                  letterSpacing: '0.22em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                <span style={{ color: '#A9ABB0' }}>(06)</span>
+                <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
+                Transparent Pricing
+              </span>
+              <h2
+                style={{
+                  margin: '0',
+                  font: "400 clamp(42px, 4.8vw, 72px)/1.0 Inter, system-ui, sans-serif",
+                  letterSpacing: '-0.015em',
+                }}
+              >
+                Simple, fair and <em style={{ fontStyle: 'italic', color: '#FF792E' }}>in your favor.</em>
+              </h2>
+            </div>
             <p
               style={{
                 margin: '0',
-                maxWidth: '460px',
+                maxWidth: '440px',
                 color: '#A9ABB0',
-                font: '400 17px/1.7 Inter, system-ui, sans-serif',
+                font: '400 16px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              No upfront fees and no retainers. We only earn when your deal assigns, and you keep the bigger share.
+              No upfront fees, retainers, or hidden expenses. Wholesalers keep 55% of the total assignment fee. Test your payout below:
             </p>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '16px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span
-                  style={{
-                    color: '#FF792E',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  You
-                </span>
-                <span style={{ font: "400 72px/0.9 Inter, system-ui, sans-serif" }}>
-                  55
-                  <span style={{ color: '#FF792E' }}>%</span>
-                </span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Dispo With Don
-                </span>
-                <span style={{ font: "400 72px/0.9 Inter, system-ui, sans-serif", color: '#A9ABB0' }}>45%</span>
-              </div>
-            </div>
-            <div style={{ display: 'flex', height: '4px', borderRadius: '99px', overflow: 'hidden', gap: '4px' }}>
-              <div style={{ width: '55%', background: '#FF792E', borderRadius: '99px' }} />
-              <div style={{ width: '45%', background: '#343437', borderRadius: '99px' }} />
-            </div>
-            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
-              Assignment fee split, in favor of the wholesaler who brings the deal.
-            </span>
-          </div>
+
+          <FeeSplitCalculator />
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{

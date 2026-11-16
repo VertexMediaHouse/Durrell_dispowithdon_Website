@@ -11,13 +11,10 @@ export default function About() {
     <>
       <Header active="About" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '72px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
@@ -105,12 +102,9 @@ export default function About() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '120px',
+          paddingTop: 'var(--section-pad)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
           gap: '80px',
@@ -296,128 +290,120 @@ export default function About() {
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            rowGap: '40px',
-            padding: '56px 0',
-            borderTop: '1px solid #262628',
-            borderBottom: '1px solid #262628',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+            gap: '24px',
           }}
         >
-          <div style={{ padding: '8px 32px 8px 0px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <div className="stat-box-modern">
             <span
               style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
+                font: "600 clamp(52px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif",
                 letterSpacing: '-0.02em',
+                color: '#F4F4F2',
               }}
             >
-              1,800
-              <span style={{ color: '#FF792E' }}>+</span>
+              1,800<span style={{ color: '#FF792E' }}>+</span>
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
               }}
             >
-              Verified cash buyers
+              Verified Cash Buyers
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px/1.5 Inter, system-ui, sans-serif' }}>
+              Active buyers tracked by real verified closing history across Midwestern & Southern markets.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern">
             <span
               style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
+                font: "600 clamp(52px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif",
                 letterSpacing: '-0.02em',
+                color: '#F4F4F2',
               }}
             >
-              340
-              <span style={{ color: '#FF792E' }}>+</span>
+              340<span style={{ color: '#FF792E' }}>+</span>
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
               }}
             >
-              Deals assigned
+              Deals Assigned
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px/1.5 Inter, system-ui, sans-serif' }}>
+              Successfully closed contracts disbursed through vetted title agencies and escrow officers.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern">
             <span
               style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
+                font: "600 clamp(52px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif",
                 letterSpacing: '-0.02em',
+                color: '#F4F4F2',
               }}
             >
               12
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
               }}
             >
-              Median days to assign
+              Median Days to Assign
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px/1.5 Inter, system-ui, sans-serif' }}>
+              From initial deal packet launch to signed assignment agreement and earnest money deposit.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern">
             <span
               style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
+                font: "600 clamp(52px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif",
                 letterSpacing: '-0.02em',
+                color: '#F4F4F2',
               }}
             >
               8
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
               }}
             >
-              Team members
+              Full-Time Dispo Pros
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px/1.5 Inter, system-ui, sans-serif' }}>
+              Specialists in underwriting, photography, buyer relations, and transaction coordination.
             </span>
           </div>
         </div>
       </section>
+
+      {/* Section 02: What we stand for */}
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -426,10 +412,10 @@ export default function About() {
             justifyContent: 'space-between',
             alignItems: 'flex-end',
             gap: '32px',
-            marginBottom: '56px',
+            marginBottom: '48px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '720px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '720px' }}>
             <span
               style={{
                 alignSelf: 'flex-start',
@@ -444,7 +430,7 @@ export default function About() {
             >
               <span style={{ color: '#A9ABB0' }}>(02)</span>
               <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
-              What we stand for
+              Our Core Principles
             </span>
             <h2
               style={{
@@ -457,35 +443,34 @@ export default function About() {
             </h2>
           </div>
         </div>
+
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            borderTop: '1px solid #262628',
-            borderBottom: '1px solid #262628',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: '24px',
           }}
         >
-          <div style={{ padding: '40px 32px 40px 0px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className="how-it-works-card">
             <span
               style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
+                width: '56px',
+                height: '56px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
               <svg
-                width="21"
-                height="21"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -493,43 +478,34 @@ export default function About() {
                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
               </svg>
             </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
               Straight about the numbers
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              If the ARV is high or the spread is thin, we tell you before we market it, not after it sits for three
-              weeks.
+              If the ARV is unrealistic or the spread is too tight, we tell you up front before marketing it, not after your inspection period runs out.
             </span>
           </div>
-          <div
-            style={{
-              padding: '40px 32px 40px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-            }}
-          >
+
+          <div className="how-it-works-card">
             <span
               style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
+                width: '56px',
+                height: '56px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
               <svg
-                width="21"
-                height="21"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -539,42 +515,34 @@ export default function About() {
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-              Buyers who actually close
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+              Buyers who actually perform
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              Our network is tracked by closing history, not signup forms. Buyers who flake don't stay on the list.
+              Our network is tracked by verifiable closed transactions, not email subscribers. Flaky buyers or renegotiators are promptly purged.
             </span>
           </div>
-          <div
-            style={{
-              padding: '40px 32px 40px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-            }}
-          >
+
+          <div className="how-it-works-card">
             <span
               style={{
-                flex: 'none',
-                width: '52px',
-                height: '52px',
+                width: '56px',
+                height: '56px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
               <svg
-                width="21"
-                height="21"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -585,17 +553,19 @@ export default function About() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </span>
-            <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-              One point of contact
+            <span style={{ font: "500 24px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+              One dedicated dispo partner
             </span>
             <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-              From submission to the closing table, you deal with one person who knows exactly where your file stands.
+              From initial upload to wire confirmation at title, you communicate with one lead manager who knows every detail of your file.
             </span>
           </div>
         </div>
       </section>
+
+      {/* Section 03: The Team */}
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -604,10 +574,10 @@ export default function About() {
             justifyContent: 'space-between',
             alignItems: 'flex-end',
             gap: '32px',
-            marginBottom: '56px',
+            marginBottom: '48px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '720px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '720px' }}>
             <span
               style={{
                 alignSelf: 'flex-start',
@@ -622,7 +592,7 @@ export default function About() {
             >
               <span style={{ color: '#A9ABB0' }}>(03)</span>
               <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
-              The team
+              The Team
             </span>
             <h2
               style={{
@@ -634,129 +604,98 @@ export default function About() {
               The people <em style={{ fontStyle: 'italic', color: '#FF792E' }}>moving your deal.</em>
             </h2>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '400px' }}>
-            <p
-              style={{
-                margin: '0',
-                maxWidth: '400px',
-                color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
-              }}
-            >
-              Acquisitions, deal marketing, buyer relations and transaction coordination under one roof.
-            </p>
-          </div>
+          <p
+            style={{
+              margin: '0',
+              maxWidth: '380px',
+              color: '#A9ABB0',
+              font: '400 16px/1.7 Inter, system-ui, sans-serif',
+            }}
+          >
+            Underwriting, marketing, buyer outreach and escrow coordination united under one roof.
+          </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '28px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div
-              className="ph"
-              style={{
-                position: 'relative',
-                height: '340px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                border: '1px solid #262628',
-              }}
-            >
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '24px' }}>
+          <div className="team-card-modern">
+            <div className="team-img-wrap">
               <Img src={img.portrait_m} alt="Portrait of Don, Founder and Lead Dispositions at Dispo With Don" width={800} height={800} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Durrell “Don” W.
-              </span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', padding: '0 6px 6px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ font: "500 22px/1.1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  Durrell “Don” W.
+                </span>
+                <span className="spread-badge" style={{ fontSize: '10px', padding: '3px 8px' }}>Lead</span>
+              </div>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Founder & Lead Dispositions
+                Founder & Dispositions
               </span>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div
-              className="ph2"
-              style={{
-                position: 'relative',
-                height: '340px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                border: '1px solid #262628',
-              }}
-            >
+
+          <div className="team-card-modern">
+            <div className="team-img-wrap">
               <Img src={img.portrait_w} alt="Portrait of the Buyer Relations lead at Dispo With Don" width={800} height={800} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', padding: '0 6px 6px' }}>
+              <span style={{ font: "500 22px/1.1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                 Kayla Brooks
               </span>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Buyer Relations
+                Buyer Network Relations
               </span>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div
-              className="ph"
-              style={{
-                position: 'relative',
-                height: '340px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                border: '1px solid #262628',
-              }}
-            >
+
+          <div className="team-card-modern">
+            <div className="team-img-wrap">
               <Img src={img.portrait_m2} alt="Portrait of the Deal Marketing lead at Dispo With Don" width={800} height={800} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', padding: '0 6px 6px' }}>
+              <span style={{ font: "500 22px/1.1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                 Andre Mitchell
               </span>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Deal Marketing
+                Deal Marketing & Assets
               </span>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <div
-              className="ph2"
-              style={{
-                position: 'relative',
-                height: '340px',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                border: '1px solid #262628',
-              }}
-            >
+
+          <div className="team-card-modern">
+            <div className="team-img-wrap">
               <Img src={img.portrait_w2} alt="Portrait of the Transaction Coordination lead at Dispo With Don" width={800} height={800} />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', padding: '0 6px 6px' }}>
+              <span style={{ font: "500 22px/1.1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                 Priya Nair
               </span>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
@@ -766,71 +705,73 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Quote */}
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
+          className="luxury-card"
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '36px',
+            gap: '28px',
             textAlign: 'center',
             maxWidth: '1040px',
             margin: '0 auto',
+            padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px)',
           }}
         >
-          <span
-            aria-hidden="true"
-            style={{ color: '#FF792E', font: "400 120px/0.5 Inter, system-ui, sans-serif", height: '50px' }}
-          >
-            “
-          </span>
+          <div style={{ display: 'flex', gap: '6px', color: '#FF792E', fontSize: '18px' }}>
+            ★★★★★
+          </div>
           <p
             style={{
               margin: '0',
-              font: "400 clamp(30px, 3.4vw, 48px)/1.22 Inter, system-ui, sans-serif",
+              font: "400 clamp(24px, 3.2vw, 42px)/1.3 Inter, system-ui, sans-serif",
               letterSpacing: '-0.01em',
+              color: '#F4F4F2',
             }}
           >
-            Don told me straight that my ARV was high, repriced it, and had{' '}
-            <em style={{ fontStyle: 'italic', color: '#FF792E' }}>three offers in four days.</em> That honesty is why I
-            send him every deal I can't move myself.
+            “Don told me straight that my ARV was high, repriced it honestly, and had{' '}
+            <em style={{ fontStyle: 'italic', color: '#FF792E' }}>three offers in four days.</em> That transparency is why I send him every deal I lock up.”
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingTop: '8px' }}>
             <span
               style={{
-                width: '52px',
-                height: '52px',
+                width: '50px',
+                height: '50px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.4)',
+                border: '1.5px solid rgba(255,121,46,.45)',
+                background: 'rgba(255,121,46,.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#FF792E',
-                font: "italic 400 20px Inter, system-ui, sans-serif",
+                font: "italic 600 20px Inter, system-ui, sans-serif",
               }}
             >
               TR
             </span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left' }}>
-              <span style={{ font: '500 16px Inter, system-ui, sans-serif' }}>Tasha Reynolds</span>
+              <span style={{ font: '600 16px Inter, system-ui, sans-serif', color: '#F4F4F2' }}>Tasha Reynolds</span>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Wholesaler · Indianapolis, IN
+                Active Wholesaler · Indianapolis, IN
               </span>
             </div>
           </div>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{

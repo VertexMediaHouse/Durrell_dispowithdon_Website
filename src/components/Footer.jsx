@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
 
-export default function Footer({ wordmarkAlign }) {
+export default function Footer({ wordmarkAlign = 'left' }) {
   return (
     <footer
+      className="site-container"
       style={{
-        maxWidth: '1320px',
-        margin: '0 auto',
-        paddingLeft: '32px',
-        paddingRight: '32px',
-        paddingTop: '150px',
+        paddingTop: 'var(--section-pad)',
         paddingBottom: '36px',
       }}
     >
@@ -114,7 +111,7 @@ export default function Footer({ wordmarkAlign }) {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 190px), 1fr))',
           gap: '40px',
           padding: '56px 0',
         }}

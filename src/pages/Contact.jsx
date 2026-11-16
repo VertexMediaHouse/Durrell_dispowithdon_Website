@@ -12,13 +12,10 @@ export default function Contact() {
     <>
       <Header active="Contact" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '72px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
@@ -104,24 +101,24 @@ export default function Contact() {
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '0' }}
+        className="site-container"
+        style={{ paddingTop: 'clamp(28px, 4vw, 48px)' }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            borderBottom: '1px solid #262628',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+            gap: '20px',
           }}
         >
-          <div style={{ padding: '36px 28px 36px 0px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <div className="stat-box-modern" style={{ padding: '28px 24px' }}>
             <span
               style={{
-                flex: 'none',
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -133,7 +130,7 @@ export default function Contact() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -143,35 +140,30 @@ export default function Contact() {
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
               }}
             >
-              Call
+              Direct Phone
             </span>
-            <a href="tel:5553184720" style={{ font: "400 26px/1.2 Inter, system-ui, sans-serif" }}>
+            <a href="tel:5553184720" style={{ font: "500 22px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2', textDecoration: 'none' }}>
               (555) 318-4720
             </a>
+            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
+              Mon–Fri 8–7 CT · Direct to Don
+            </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern" style={{ padding: '28px 24px' }}>
             <span
               style={{
-                flex: 'none',
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -183,7 +175,7 @@ export default function Contact() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -194,35 +186,30 @@ export default function Contact() {
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
               }}
             >
-              Email
+              Email Us
             </span>
-            <a href="mailto:deals@dispowithdon.com" style={{ font: "400 26px/1.2 Inter, system-ui, sans-serif" }}>
+            <a href="mailto:deals@dispowithdon.com" style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2', textDecoration: 'none' }}>
               deals@dispowithdon.com
             </a>
+            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
+              Same-day reply guaranteed
+            </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern" style={{ padding: '28px 24px' }}>
             <span
               style={{
-                flex: 'none',
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -234,7 +221,7 @@ export default function Contact() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -245,33 +232,30 @@ export default function Contact() {
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
               }}
             >
-              Hours
+              Dispo Hours
             </span>
-            <span style={{ font: "400 26px/1.2 Inter, system-ui, sans-serif" }}>Mon–Fri 8–7 · Sat 9–2 CT</span>
+            <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+              Mon–Fri 8–7 · Sat 9–2
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
+              Central Standard Time (CT)
+            </span>
           </div>
-          <div
-            style={{
-              padding: '36px 28px 36px 28px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
+
+          <div className="stat-box-modern" style={{ padding: '28px 24px' }}>
             <span
               style={{
-                flex: 'none',
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '99px',
-                border: '1px solid rgba(255,121,46,.35)',
-                background: 'rgba(255,121,46,.07)',
+                border: '1px solid rgba(255,121,46,.4)',
+                background: 'rgba(255,121,46,.1)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -283,7 +267,7 @@ export default function Contact() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#FF792E"
-                strokeWidth="1.6"
+                strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -295,133 +279,134 @@ export default function Contact() {
             </span>
             <span
               style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
+                color: '#FF792E',
+                font: '600 11px Inter, system-ui, sans-serif',
+                letterSpacing: '0.16em',
                 textTransform: 'uppercase',
               }}
             >
-              Markets
+              Target Markets
             </span>
-            <span style={{ font: "400 26px/1.2 Inter, system-ui, sans-serif" }}>
-              Nationwide · Midwest & Southeast
+            <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+              Midwest & Southeast
+            </span>
+            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
+              OH, IN, GA, TN, FL & expanding
             </span>
           </div>
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '96px',
+          paddingTop: 'clamp(48px, 6vw, 96px)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
-          gap: '28px',
+          gap: '36px',
           alignItems: 'stretch',
         }}
       >
         <form
           onSubmit={preventSubmit}
+          className="luxury-card"
           style={{
-            position: 'relative',
-            background: '#1A1A1B',
-            border: '1px solid #262628',
-            borderRadius: '24px',
-            padding: 'clamp(28px, 4vw, 56px)',
             display: 'flex',
             flexDirection: 'column',
-            gap: '36px',
+            gap: '28px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <span style={{ font: "400 36px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-              Send us a message
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', borderBottom: '1px solid #262628', paddingBottom: '20px' }}>
+            <span className="glass-pill" style={{ alignSelf: 'flex-start', color: '#FF792E', borderColor: 'rgba(255,121,46,0.3)' }}>
+              CONTACT DISPO WITH DON
             </span>
+            <h2 style={{ margin: '0', font: "400 32px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+              Send us a message
+            </h2>
             <span style={{ color: '#8A8C91', font: '400 14px Inter, system-ui, sans-serif' }}>
-              We answer every message the same business day.
+              We answer every inquiry the same business day by phone or email.
             </span>
           </div>
           <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '28px 28px' }}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}
           >
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Full name
+                Full name *
               </span>
-              <input className="fld" type="text" name="name" placeholder="Jane Smith" autoComplete="name" />
+              <input className="fld" type="text" name="name" placeholder="Jane Smith" autoComplete="name" required />
             </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Email
+                Email address *
               </span>
-              <input className="fld" type="email" name="email" placeholder="you@company.com" autoComplete="email" />
+              <input className="fld" type="email" name="email" placeholder="you@company.com" autoComplete="email" required />
             </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
-                Phone
+                Phone number *
               </span>
-              <input className="fld" type="tel" name="phone" placeholder="(555) 000-0000" autoComplete="tel" />
+              <input className="fld" type="tel" name="phone" placeholder="(555) 000-0000" autoComplete="tel" required />
             </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <span
                 style={{
                   color: '#A9ABB0',
                   font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                 }}
               >
                 I am a
               </span>
               <select className="fld" name="role">
-                <option>Select one</option>
-                <option>Wholesaler</option>
-                <option>Cash buyer</option>
-                <option>Agent / broker</option>
+                <option>Select role</option>
+                <option>Wholesaler with deal</option>
+                <option>Active cash buyer</option>
+                <option>Real estate agent / broker</option>
+                <option>Title / escrow officer</option>
                 <option>Other</option>
               </select>
             </label>
           </div>
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <span
               style={{
                 color: '#A9ABB0',
                 font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
+                letterSpacing: '0.14em',
                 textTransform: 'uppercase',
               }}
             >
-              Message
+              Your Message or Deal Summary
             </span>
             <textarea
               className="fld"
               name="message"
               rows="5"
-              placeholder="Tell us about your deal or what you're looking for…"
+              placeholder="Tell us about your contracted property, questions about our fee split, or your buying criteria…"
               style={{ resize: 'vertical' }}
+              required
             />
           </label>
           <button
@@ -432,11 +417,12 @@ export default function Contact() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '16px',
-              minHeight: '58px',
-              padding: '0 8px 0 28px',
+              minHeight: '60px',
+              padding: '0 10px 0 32px',
               border: '0',
               borderRadius: '999px',
-              background: '#FF792E',
+              background: 'linear-gradient(135deg, #FF792E 0%, #FF9454 100%)',
+              boxShadow: '0 12px 30px rgba(255, 121, 46, 0.35)',
               color: '#141414',
               font: '600 15px Inter, system-ui, sans-serif',
               cursor: 'pointer',
@@ -525,12 +511,9 @@ export default function Contact() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '150px',
+          paddingTop: 'var(--section-pad)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
           gap: '64px',
@@ -573,20 +556,21 @@ export default function Contact() {
             Everything wholesalers and buyers ask us most.
           </p>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #262628' }}>
-          <details open style={{ borderBottom: '1px solid #262628' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <details className="faq-item" open>
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>01</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>01</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
                   How is the assignment fee split?
                 </span>
               </span>
@@ -594,14 +578,14 @@ export default function Contact() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -609,29 +593,30 @@ export default function Contact() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              55/45, in favor of the wholesaler who brings the deal. You keep 55% of the assignment fee and Dispo With
-              Don earns 45%.
+              55/45, in favor of the wholesaler who locks up the contract. You keep 55% of the total assignment fee and Dispo With Don earns 45% upon successful title funding.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>02</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>02</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
                   Do I need the property under contract first?
                 </span>
               </span>
@@ -639,14 +624,14 @@ export default function Contact() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -654,29 +639,30 @@ export default function Contact() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Yes. We market contracted deals with assignment rights in place. If you're still negotiating, call us and
-              we'll give you an early read.
+              Yes. We market contracted deals with clear assignability rights in place. If you are actively negotiating an offer and want an honest valuation read first, call Don directly at (555) 318-4720.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>03</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>03</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
                   What do I need to submit a deal?
                 </span>
               </span>
@@ -684,14 +670,14 @@ export default function Contact() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -699,29 +685,30 @@ export default function Contact() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              The address and asset type, contract price, desired buyer price, estimated ARV, repair estimate, closing
-              deadline and photos. Uploading the contract is optional.
+              The property address, asset type, your contracted purchase price, target buyer price, closing deadline, and walkthrough photos. Uploading the PDF purchase agreement is optional but recommended.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>04</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>04</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
                   Which markets do you work in?
                 </span>
               </span>
@@ -729,14 +716,14 @@ export default function Contact() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -744,28 +731,30 @@ export default function Contact() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Nationwide, with the deepest buyer coverage across the Midwest and Southeast.
+              We operate nationwide, with our deepest cash buyer concentration in Ohio, Indiana, Georgia, Tennessee, Florida, and surrounding Midwestern & Southern metros.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>05</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>05</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
                   How do I join the buyers network?
                 </span>
               </span>
@@ -773,14 +762,14 @@ export default function Contact() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -788,13 +777,13 @@ export default function Contact() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Fill out the cash-buyer registration with your markets, property types, budget and criteria. It's free.
+              Simply register via our <Link to="/buyers-network" style={{ color: '#FF792E' }}>Buyers Network</Link> page with your target zip codes, property types, and budget range. Membership is completely free.
             </p>
           </details>
         </div>

@@ -12,13 +12,10 @@ export default function BuyersNetwork() {
     <>
       <Header active="Buyers" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '72px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
@@ -103,15 +100,12 @@ export default function BuyersNetwork() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '96px',
+          paddingTop: 'clamp(48px, 6vw, 96px)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
-          gap: '72px',
+          gap: '64px',
           alignItems: 'stretch',
         }}
       >
@@ -141,24 +135,29 @@ export default function BuyersNetwork() {
           >
             Deals that match <em style={{ fontStyle: 'italic', color: '#FF792E' }}>how you buy.</em>
           </h2>
-          <div style={{ borderTop: '1px solid #262628' }}>
+
+          {/* Luxury Benefit Cards Grid */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <div
               style={{
                 display: 'flex',
-                gap: '20px',
+                gap: '18px',
                 alignItems: 'flex-start',
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                padding: '20px 22px',
+                background: 'linear-gradient(180deg, #1A1A1C 0%, #151516 100%)',
+                border: '1px solid #262628',
+                borderRadius: '18px',
+                transition: 'border-color 0.25s ease',
               }}
             >
               <span
                 style={{
                   flex: 'none',
-                  width: '48px',
-                  height: '48px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: '99px',
-                  border: '1px solid rgba(255,121,46,.35)',
-                  background: 'rgba(255,121,46,.07)',
+                  border: '1px solid rgba(255,121,46,.4)',
+                  background: 'rgba(255,121,46,.1)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -170,7 +169,7 @@ export default function BuyersNetwork() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#FF792E"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -178,32 +177,35 @@ export default function BuyersNetwork() {
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
               </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                   First look at new inventory
                 </span>
-                <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-                  Matched deals reach your inbox or phone before they go to the wider list.
+                <span style={{ color: '#8A8C91', font: '400 14px/1.6 Inter, system-ui, sans-serif' }}>
+                  Matched deals reach your inbox or phone before they are posted anywhere publicly.
                 </span>
               </div>
             </div>
+
             <div
               style={{
                 display: 'flex',
-                gap: '20px',
+                gap: '18px',
                 alignItems: 'flex-start',
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                padding: '20px 22px',
+                background: 'linear-gradient(180deg, #1A1A1C 0%, #151516 100%)',
+                border: '1px solid #262628',
+                borderRadius: '18px',
               }}
             >
               <span
                 style={{
                   flex: 'none',
-                  width: '48px',
-                  height: '48px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: '99px',
-                  border: '1px solid rgba(255,121,46,.35)',
-                  background: 'rgba(255,121,46,.07)',
+                  border: '1px solid rgba(255,121,46,.4)',
+                  background: 'rgba(255,121,46,.1)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -215,7 +217,7 @@ export default function BuyersNetwork() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#FF792E"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -225,32 +227,35 @@ export default function BuyersNetwork() {
                   <circle cx="12" cy="12" r="2" />
                 </svg>
               </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                  Only deals that fit
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  Only deals that fit your criteria
                 </span>
-                <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-                  We match on market, price, property type and rehab level. No blasting.
+                <span style={{ color: '#8A8C91', font: '400 14px/1.6 Inter, system-ui, sans-serif' }}>
+                  Matched on exact buy box, zip codes, and rehab scopes. No spam, no junk deals.
                 </span>
               </div>
             </div>
+
             <div
               style={{
                 display: 'flex',
-                gap: '20px',
+                gap: '18px',
                 alignItems: 'flex-start',
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                padding: '20px 22px',
+                background: 'linear-gradient(180deg, #1A1A1C 0%, #151516 100%)',
+                border: '1px solid #262628',
+                borderRadius: '18px',
               }}
             >
               <span
                 style={{
                   flex: 'none',
-                  width: '48px',
-                  height: '48px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: '99px',
-                  border: '1px solid rgba(255,121,46,.35)',
-                  background: 'rgba(255,121,46,.07)',
+                  border: '1px solid rgba(255,121,46,.4)',
+                  background: 'rgba(255,121,46,.1)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -262,7 +267,7 @@ export default function BuyersNetwork() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#FF792E"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -272,32 +277,35 @@ export default function BuyersNetwork() {
                   <path d="m9 14 2 2 4-4" />
                 </svg>
               </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                  Numbers up front
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  Transparent numbers & verified comps
                 </span>
-                <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-                  Every deal sheet shows ARV, repair scope and comps, so you can decide fast.
+                <span style={{ color: '#8A8C91', font: '400 14px/1.6 Inter, system-ui, sans-serif' }}>
+                  Every deal sheet comes with vetted ARV comps, itemized repair scopes, and walkthrough videos.
                 </span>
               </div>
             </div>
+
             <div
               style={{
                 display: 'flex',
-                gap: '20px',
+                gap: '18px',
                 alignItems: 'flex-start',
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                padding: '20px 22px',
+                background: 'linear-gradient(180deg, #1A1A1C 0%, #151516 100%)',
+                border: '1px solid #262628',
+                borderRadius: '18px',
               }}
             >
               <span
                 style={{
                   flex: 'none',
-                  width: '48px',
-                  height: '48px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: '99px',
-                  border: '1px solid rgba(255,121,46,.35)',
-                  background: 'rgba(255,121,46,.07)',
+                  border: '1px solid rgba(255,121,46,.4)',
+                  background: 'rgba(255,121,46,.1)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -309,7 +317,7 @@ export default function BuyersNetwork() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#FF792E"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -317,33 +325,39 @@ export default function BuyersNetwork() {
                   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                 </svg>
               </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ font: "400 26px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                  Your channels, your rules
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span style={{ font: "500 20px/1.2 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  Direct title closing
                 </span>
-                <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
-                  Choose email, text or both, and update your buy box anytime.
+                <span style={{ color: '#8A8C91', font: '400 14px/1.6 Inter, system-ui, sans-serif' }}>
+                  Clear title guaranteed through insured title companies. Earnest money held in escrow.
                 </span>
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', paddingTop: '8px' }}>
-            <span style={{ font: "400 64px/1 Inter, system-ui, sans-serif" }}>
-              1,800
-              <span style={{ color: '#FF792E' }}>+</span>
+
+          {/* Stat Card */}
+          <div className="stat-box-modern" style={{ padding: '24px 28px', flexDirection: 'row', alignItems: 'center', gap: '20px' }}>
+            <span style={{ font: "600 52px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+              1,800<span style={{ color: '#FF792E' }}>+</span>
             </span>
-            <span style={{ color: '#A9ABB0', font: '400 15px/1.6 Inter, system-ui, sans-serif', maxWidth: '260px' }}>
-              verified cash buyers already receiving matched deals.
-            </span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span className="spread-badge" style={{ alignSelf: 'flex-start', fontSize: '11px', padding: '3px 10px' }}>
+                Active Network
+              </span>
+              <span style={{ color: '#A9ABB0', font: '400 13.5px/1.5 Inter, system-ui, sans-serif' }}>
+                Verified cash buyers and hedge funds receiving matched off-market deals.
+              </span>
+            </div>
           </div>
+
           <div
             className="ph2"
             style={{
               position: 'relative',
-              /* Grows to match the taller form column so both sides end level. */
               flex: '1 1 auto',
-              minHeight: '280px',
-              borderRadius: '18px',
+              minHeight: '260px',
+              borderRadius: '20px',
               overflow: 'hidden',
               border: '1px solid #262628',
             }}
@@ -351,250 +365,186 @@ export default function BuyersNetwork() {
             <Img src={img.keys} alt="Investor receiving the keys after closing on a wholesale deal" width={1200} height={800} />
           </div>
         </div>
+
+        {/* Registration Form */}
         <form
           onSubmit={preventSubmit}
+          className="luxury-card"
           style={{
-            position: 'relative',
-            background: '#1A1A1B',
-            border: '1px solid #262628',
-            borderRadius: '24px',
-            padding: 'clamp(28px, 4vw, 56px)',
             display: 'flex',
             flexDirection: 'column',
-            gap: '36px',
+            gap: '28px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <span style={{ font: "400 34px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-              Cash-buyer registration
-            </span>
-            <span style={{ color: '#8A8C91', font: '400 14px Inter, system-ui, sans-serif' }}>
-              Takes about two minutes. Free to join.
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #262628', paddingBottom: '20px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <span className="glass-pill" style={{ alignSelf: 'flex-start', color: '#FF792E', borderColor: 'rgba(255,121,46,0.3)' }}>
+                VIP ACCESS
+              </span>
+              <h3 style={{ margin: '0', font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
+                Cash-buyer registration
+              </h3>
+            </div>
+            <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
+              100% Free · 2 min
             </span>
           </div>
-          <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '28px 28px' }}
-          >
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Full name
-              </span>
-              <input className="fld" type="text" name="name" placeholder="Jane Smith" autoComplete="name" />
-            </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Company
-              </span>
-              <input
-                className="fld"
-                type="text"
-                name="company"
-                placeholder="Smith Holdings LLC"
-                autoComplete="organization"
-              />
-            </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Email
-              </span>
-              <input className="fld" type="email" name="email" placeholder="you@company.com" autoComplete="email" />
-            </label>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Phone
-              </span>
-              <input className="fld" type="tel" name="phone" placeholder="(555) 000-0000" autoComplete="tel" />
-            </label>
-          </div>
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
+
+          {/* Section 01: Buyer Info */}
+          <div className="form-section-card">
+            <span style={{ color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              01 · Contact Details
+            </span>
+            <div
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '20px' }}
             >
-              Preferred markets
-            </span>
-            <input className="fld" type="text" name="markets" placeholder="Columbus OH, Indianapolis IN, Atlanta GA" />
-          </label>
-          <fieldset style={{ margin: '0', padding: '0', border: '0' }}>
-            <legend style={{ padding: '0', marginBottom: '14px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Property types
-              </span>
-            </legend>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px' }}>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Single-family" />
-                Single-family
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Full name *
+                </span>
+                <input className="fld" type="text" name="name" placeholder="Jane Smith" autoComplete="name" required />
               </label>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Multifamily" />
-                Multifamily
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Company / Entity
+                </span>
+                <input
+                  className="fld"
+                  type="text"
+                  name="company"
+                  placeholder="Smith Holdings LLC"
+                  autoComplete="organization"
+                />
               </label>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Condo / Townhome" />
-                Condo / Townhome
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Email address *
+                </span>
+                <input className="fld" type="email" name="email" placeholder="you@company.com" autoComplete="email" required />
               </label>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Land" />
-                Land
-              </label>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Commercial" />
-                Commercial
-              </label>
-              <label className="chip">
-                <input type="checkbox" name="types" value="Other" />
-                Other
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Direct Phone *
+                </span>
+                <input className="fld" type="tel" name="phone" placeholder="(555) 000-0000" autoComplete="tel" required />
               </label>
             </div>
-          </fieldset>
-          <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '28px 28px' }}
-          >
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Investment budget
+          </div>
+
+          {/* Section 02: Buy Box */}
+          <div className="form-section-card">
+            <span style={{ color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              02 · Target Markets & Criteria
+            </span>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                Target Markets (Cities / Zip Codes) *
               </span>
-              <select className="fld" name="budget">
-                <option>Select a range</option>
-                <option>Under $100k</option>
-                <option>$100k – $250k</option>
-                <option>$250k – $500k</option>
-                <option>$500k – $1M</option>
-                <option>$1M+</option>
-              </select>
+              <input className="fld" type="text" name="markets" placeholder="Columbus OH, Indianapolis IN, Atlanta GA" required />
             </label>
+
             <fieldset style={{ margin: '0', padding: '0', border: '0' }}>
-              <legend style={{ padding: '0', marginBottom: '12px' }}>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  How you buy
+              <legend style={{ padding: '0', marginBottom: '10px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Property types of interest
                 </span>
               </legend>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '10px' }}>
                 <label className="chip">
-                  <input type="radio" name="funding" value="cash" />
-                  Cash
+                  <input type="checkbox" name="types" value="Single-family" defaultChecked />
+                  Single-family
                 </label>
                 <label className="chip">
-                  <input type="radio" name="funding" value="financing" />
-                  Financing
+                  <input type="checkbox" name="types" value="Multifamily" />
+                  Multifamily (2–4)
+                </label>
+                <label className="chip">
+                  <input type="checkbox" name="types" value="Condo / Townhome" />
+                  Condo / Townhome
+                </label>
+                <label className="chip">
+                  <input type="checkbox" name="types" value="Commercial" />
+                  Commercial
+                </label>
+                <label className="chip">
+                  <input type="checkbox" name="types" value="Land" />
+                  Land / Lots
+                </label>
+                <label className="chip">
+                  <input type="checkbox" name="types" value="Other" />
+                  Other
                 </label>
               </div>
             </fieldset>
-          </div>
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
+
+            <div
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '20px' }}
             >
-              Buying criteria
-            </span>
-            <textarea
-              className="fld"
-              name="criteria"
-              rows="4"
-              placeholder="Light to medium rehab, 3/2 or larger, minimum $30k spread, no flood zones…"
-              style={{ resize: 'vertical' }}
-            />
-          </label>
-          <div style={{ height: '1px', background: '#262628' }} />
-          <fieldset
-            style={{ margin: '0', padding: '0', border: '0', display: 'flex', flexDirection: 'column', gap: '16px' }}
-          >
-            <legend style={{ padding: '0', marginBottom: '16px' }}>
-              <span
-                style={{
-                  color: '#A9ABB0',
-                  font: '500 11px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Communication consent
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  Investment budget
+                </span>
+                <select className="fld" name="budget">
+                  <option>Select a range</option>
+                  <option>Under $100k</option>
+                  <option>$100k – $250k</option>
+                  <option selected>$250k – $500k</option>
+                  <option>$500k – $1M</option>
+                  <option>$1M+</option>
+                </select>
+              </label>
+
+              <fieldset style={{ margin: '0', padding: '0', border: '0' }}>
+                <legend style={{ padding: '0', marginBottom: '8px' }}>
+                  <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                    Purchasing method
+                  </span>
+                </legend>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px' }}>
+                  <label className="chip">
+                    <input type="radio" name="funding" value="cash" defaultChecked />
+                    Cash / Hard Money
+                  </label>
+                  <label className="chip">
+                    <input type="radio" name="funding" value="financing" />
+                    Conventional
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <span style={{ color: '#A9ABB0', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                Detailed Buying criteria
               </span>
-            </legend>
-            <label
-              style={{
-                display: 'flex',
-                gap: '14px',
-                alignItems: 'flex-start',
-                color: '#C9CACD',
-                font: '400 14px/1.6 Inter, system-ui, sans-serif',
-              }}
-            >
-              <input type="checkbox" name="consent_email" />
-              Email me new deals and updates from Dispo With Don. Unsubscribe anytime.
+              <textarea
+                className="fld"
+                name="criteria"
+                rows="3"
+                placeholder="Light cosmetic to full gut, 3/2 or larger, min $30k projected spread, no flood zones..."
+                style={{ resize: 'vertical' }}
+              />
             </label>
-            <label
-              style={{
-                display: 'flex',
-                gap: '14px',
-                alignItems: 'flex-start',
-                color: '#C9CACD',
-                font: '400 14px/1.6 Inter, system-ui, sans-serif',
-              }}
-            >
+          </div>
+
+          {/* Section 03: Consent */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <label className="check-card-row">
+              <input type="checkbox" name="consent_email" defaultChecked />
+              <span>
+                <strong style={{ color: '#F4F4F2', display: 'block' }}>Email Deal Alerts</strong>
+                Send off-market deal packets directly to my inbox as soon as they are contracted.
+              </span>
+            </label>
+            <label className="check-card-row">
               <input type="checkbox" name="consent_sms" />
-              Text me deal alerts at the number above. Message and data rates may apply. Reply STOP to opt out.
+              <span>
+                <strong style={{ color: '#F4F4F2', display: 'block' }}>SMS Flash Alerts (Recommended)</strong>
+                Send instant text notifications for high-spread wholesale deals in my target zip codes.
+              </span>
             </label>
-          </fieldset>
+          </div>
+
           <button
             type="submit"
             className="btn-o"
@@ -603,17 +553,18 @@ export default function BuyersNetwork() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '16px',
-              minHeight: '58px',
-              padding: '0 8px 0 28px',
+              minHeight: '60px',
+              padding: '0 10px 0 32px',
               border: '0',
               borderRadius: '999px',
-              background: '#FF792E',
+              background: 'linear-gradient(135deg, #FF792E 0%, #FF9454 100%)',
+              boxShadow: '0 12px 30px rgba(255, 121, 46, 0.35)',
               color: '#141414',
               font: '600 15px Inter, system-ui, sans-serif',
               cursor: 'pointer',
             }}
           >
-            Join the Buyers Network
+            Join Cash Buyers Network
             <span
               style={{
                 width: '42px',
@@ -644,12 +595,9 @@ export default function BuyersNetwork() {
         </form>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '150px',
+          paddingTop: 'var(--section-pad)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
           gap: '64px',
@@ -689,38 +637,40 @@ export default function BuyersNetwork() {
               font: '400 16px/1.7 Inter, system-ui, sans-serif',
             }}
           >
-            Common questions from cash buyers.
+            Everything you need to know about our off-market deal pipeline.
           </p>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #262628' }}>
-          <details open style={{ borderBottom: '1px solid #262628' }}>
+
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <details className="faq-item" open>
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>01</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
-                  Is it free to join?
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>01</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
+                  Is it completely free to join?
                 </span>
               </span>
               <span
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -728,43 +678,45 @@ export default function BuyersNetwork() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Yes. Joining the buyers network costs nothing. You only pay the purchase price on deals you choose to buy.
+              Yes. Joining the cash buyers network costs absolutely nothing. There are no monthly subscriptions, platform fees, or membership dues. You only pay the agreed purchase price on deals you choose to close.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>02</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
-                  Do I need proof of funds?
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>02</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
+                  Do I need proof of funds upfront?
                 </span>
               </span>
               <span
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -772,44 +724,45 @@ export default function BuyersNetwork() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Not to join. You'll need proof of funds or a lender letter before we schedule a walkthrough on a specific
-              deal.
+              Not to join the VIP list. You will only need proof of funds (bank statement) or an approved hard-money lender letter before we schedule a property walkthrough or execute an assignment agreement.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>03</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
-                  How often will I hear from you?
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>03</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
+                  How often will I receive deal alerts?
                 </span>
               </span>
               <span
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -817,44 +770,45 @@ export default function BuyersNetwork() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Only when a deal matches your buy box. Most buyers get a few matched deals a month, depending on their
-              markets.
+              Only when an off-market deal strictly fits your indicated criteria and target zip codes. On average, active buyers receive 2 to 6 curated deal packets per month. We never spam your phone or inbox with mismatched leads.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '24px 0',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>04</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
-                  Can I change my criteria later?
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 600 20px Inter, system-ui, sans-serif" }}>04</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif" }}>
+                  Can I update my buy box or pause alerts later?
                 </span>
               </span>
               <span
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  font: '300 22px/1 Inter, system-ui, sans-serif',
+                  font: '300 20px/1 Inter, system-ui, sans-serif',
                 }}
               >
                 +
@@ -862,19 +816,20 @@ export default function BuyersNetwork() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 20px 40px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15.5px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Anytime. Reply to any deal alert or contact us and we'll update your markets, budget or property types.
+              At any time. You can reply directly to any SMS or email alert, or reach out to our team to modify your target zip codes, price range, or preferred asset types. You can pause notifications whenever you reach capacity.
             </p>
           </details>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container"
+        style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{

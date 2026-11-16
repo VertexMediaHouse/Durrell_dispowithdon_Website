@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Img from '../components/Img'
 import Ticker from '../components/Ticker'
+import FeeSplitCalculator from '../components/FeeSplitCalculator'
 import { img } from '../lib/images'
 
 const MARQUEE = ['Good deals', 'Serious buyers', 'Real closings']
@@ -15,61 +16,72 @@ export default function Home() {
     <>
       <Header active="Home" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '88px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 520px), 1fr))',
-            gap: '72px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
+            gap: '56px',
             alignItems: 'center',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '34px' }}>
-            <span
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '26px', maxWidth: '560px' }}>
+            {/* Live Indicator Pill */}
+            <div
               style={{
                 alignSelf: 'flex-start',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '14px',
-                color: '#FF792E',
-                font: '500 12px Inter, system-ui, sans-serif',
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
+                gap: '10px',
+                padding: '6px 14px',
+                borderRadius: '99px',
+                background: 'rgba(255,121,46,0.08)',
+                border: '1px solid rgba(255,121,46,0.3)',
+                boxShadow: '0 2px 12px rgba(255,121,46,0.1)',
               }}
             >
-              <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
-              Disposition services for real estate wholesalers
-            </span>
+              <span className="pulse-dot" />
+              <span
+                style={{
+                  color: '#FF792E',
+                  font: '600 11px Inter, system-ui, sans-serif',
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                18 Active Deals · 1,800+ Cash Buyers
+              </span>
+            </div>
+
             <h1
               style={{
                 margin: '0',
-                font: "400 clamp(60px, 7.4vw, 116px)/0.96 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.02em',
+                font: "400 clamp(42px, 5vw, 76px)/0.96 Inter, system-ui, sans-serif",
+                letterSpacing: '-0.025em',
+                color: '#F4F4F2',
               }}
             >
-              You find the deal.
+              You lock it up.
               <br />
-              <em style={{ fontStyle: 'italic', color: '#FF792E' }}>We help find the buyer.</em>
+              <em style={{ fontStyle: 'italic', color: '#FF792E' }}>We help move it.</em>
             </h1>
+
             <p
               style={{
                 margin: '0',
-                maxWidth: '520px',
+                maxWidth: '480px',
                 color: '#A9ABB0',
-                font: '400 18px/1.7 Inter, system-ui, sans-serif',
+                font: '400 16px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              You've done the work to get a property under contract. Let Dispo With Don market the opportunity, connect
-              it with investors who actually close, and coordinate every step to the closing table.
+              Skip the tire-kickers and flaky buyers. Dispo With Don underwrites your contract, promotes it to vetted cash buyers who perform, and coordinates title through funding — with <strong>55% of the fee staying in your pocket.</strong>
             </p>
+
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               <Link
                 to="/submit-deal"
@@ -77,20 +89,22 @@ export default function Home() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '16px',
-                  minHeight: '58px',
+                  gap: '14px',
+                  minHeight: '54px',
                   padding: '0 8px 0 26px',
-                  background: '#FF792E',
+                  background: 'linear-gradient(135deg, #FF792E 0%, #FF9454 100%)',
+                  boxShadow: '0 10px 24px rgba(255,121,46,0.3)',
                   borderRadius: '999px',
                   color: '#141414',
                   font: '600 15px Inter, system-ui, sans-serif',
+                  textDecoration: 'none',
                 }}
               >
-                Submit Your Deal
+                Submit Your Deal (55% Split)
                 <span
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '38px',
+                    height: '38px',
                     borderRadius: '99px',
                     background: '#141414',
                     display: 'inline-flex',
@@ -99,8 +113,8 @@ export default function Home() {
                   }}
                 >
                   <svg
-                    width="15"
-                    height="15"
+                    width="14"
+                    height="14"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#FF792E"
@@ -120,19 +134,20 @@ export default function Home() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '12px',
-                  minHeight: '58px',
-                  padding: '0 26px',
+                  gap: '10px',
+                  minHeight: '54px',
+                  padding: '0 24px',
                   border: '1px solid #343437',
                   borderRadius: '999px',
                   color: '#F4F4F2',
                   font: '500 15px Inter, system-ui, sans-serif',
+                  textDecoration: 'none',
                 }}
               >
-                Join Our Buyers Network
+                Join Buyers Network
                 <svg
-                  width="15"
-                  height="15"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -146,41 +161,37 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-            <div style={{ display: 'flex', gap: '36px', paddingTop: '14px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>
-                  1,800
-                  <span style={{ color: '#FF792E' }}>+</span>
+
+            {/* Compact Trust Stat Chips */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '12px', paddingTop: '8px' }}>
+              <div className="hero-stat-card">
+                <span style={{ font: "600 24px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  1,800<span style={{ color: '#FF792E' }}>+</span>
                 </span>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Cash buyers
+                <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  Verified Buyers
                 </span>
               </div>
-              <div style={{ width: '1px', background: '#262628' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>
-                  12 <span style={{ fontSize: '20px', color: '#A9ABB0' }}>days</span>
+              <div className="hero-stat-card">
+                <span style={{ font: "600 24px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  12 <span style={{ fontSize: '15px', color: '#FF792E' }}>Days</span>
                 </span>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Median to assign
+                <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  Median to Assign
+                </span>
+              </div>
+              <div className="hero-stat-card">
+                <span style={{ font: "600 24px/1 Inter, system-ui, sans-serif", color: '#FF792E' }}>
+                  55<span style={{ color: '#FF792E' }}>%</span>
+                </span>
+                <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  Your Fee Cut
                 </span>
               </div>
             </div>
           </div>
+
+          {/* Hero Right Column: Spotlight Deal + Docked Fee Split Card */}
           <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '18px' }}>
             <div
               aria-hidden="true"
@@ -188,33 +199,35 @@ export default function Home() {
                 position: 'absolute',
                 inset: '-80px -60px -40px -40px',
                 borderRadius: '999px',
-                background: 'radial-gradient(closest-side, rgba(255,121,46,.22), transparent)',
+                background: 'radial-gradient(closest-side, rgba(255,121,46,.24), transparent)',
                 pointerEvents: 'none',
               }}
             />
+
+            {/* Spotlight Card */}
             <div
               style={{
                 position: 'relative',
-                background: 'rgba(26,26,27,.92)',
-                border: '1px solid #343437',
+                background: 'linear-gradient(180deg, #1d1d20 0%, #161618 100%)',
+                border: '1px solid #343438',
                 borderRadius: '24px',
-                padding: '22px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '22px',
-                boxShadow: '0 40px 80px rgba(0,0,0,.5)',
+                gap: '20px',
+                boxShadow: '0 40px 80px rgba(0,0,0,.65), 0 0 32px rgba(255,121,46,.1)',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span
                   style={{
                     color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
+                    font: '600 11px Inter, system-ui, sans-serif',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
                   }}
                 >
-                  Featured deal
+                  Featured Deal Spotlight
                 </span>
                 <span
                   style={{
@@ -222,7 +235,7 @@ export default function Home() {
                     alignItems: 'center',
                     gap: '8px',
                     color: '#FF792E',
-                    font: '500 11px Inter, system-ui, sans-serif',
+                    font: '600 11px Inter, system-ui, sans-serif',
                     letterSpacing: '0.16em',
                     textTransform: 'uppercase',
                   }}
@@ -231,51 +244,52 @@ export default function Home() {
                   Just listed
                 </span>
               </div>
+
               <div
                 className="ph"
                 style={{
                   position: 'relative',
-                  height: '250px',
-                  borderRadius: '16px',
+                  height: '260px',
+                  borderRadius: '18px',
                   overflow: 'hidden',
                   border: '1px solid #262628',
                 }}
               >
                 <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman, the featured wholesale deal in Columbus, Ohio" width={1200} height={800} priority />
+                <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                  <span className="glass-pill">
+                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                    Under Contract
+                  </span>
+                  <span className="spread-badge">
+                    +$48,500 Spread
+                  </span>
+                </div>
               </div>
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ font: "400 34px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                  Oakwood Craftsman
-                </span>
-                <span
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: '#A9ABB0',
-                    font: '400 14px Inter, system-ui, sans-serif',
-                  }}
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#FF792E"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
-                  Columbus, OH · 3 bd · 2 ba · 1,420 sq ft
+                  Columbus, OH
                 </span>
+                <span style={{ font: "500 32px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Oakwood Craftsman
+                </span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '4px' }}>
+                  <span className="spec-tag">3 Beds</span>
+                  <span className="spec-tag">2 Baths</span>
+                  <span className="spec-tag">1,420 Sq Ft</span>
+                  <span className="spec-tag">Single Family</span>
+                </div>
               </div>
+
               <div style={{ height: '1px', background: '#262628' }} />
+
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '12px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span
                     style={{
                       color: '#8A8C91',
@@ -284,11 +298,11 @@ export default function Home() {
                       textTransform: 'uppercase',
                     }}
                   >
-                    Asking
+                    Asking Price
                   </span>
-                  <span style={{ font: "400 26px/1 Inter, system-ui, sans-serif" }}>$148,500</span>
+                  <span style={{ font: "700 24px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>$148,500</span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span
                     style={{
                       color: '#8A8C91',
@@ -297,48 +311,51 @@ export default function Home() {
                       textTransform: 'uppercase',
                     }}
                   >
-                    ARV
+                    ARV Target
                   </span>
-                  <span style={{ font: "400 26px/1 Inter, system-ui, sans-serif" }}>$235,000</span>
+                  <span style={{ font: "500 24px/1 Inter, system-ui, sans-serif", color: '#D4D5D8' }}>$235,000</span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span
                     style={{
-                      color: '#8A8C91',
-                      font: '500 10px Inter, system-ui, sans-serif',
+                      color: '#FF792E',
+                      font: '600 10px Inter, system-ui, sans-serif',
                       letterSpacing: '0.18em',
                       textTransform: 'uppercase',
                     }}
                   >
-                    Spread
+                    Est. Spread
                   </span>
-                  <span style={{ font: "400 26px/1 Inter, system-ui, sans-serif", color: '#FF792E' }}>
-                    $48,500
+                  <span style={{ font: "700 24px/1 Inter, system-ui, sans-serif", color: '#FF792E' }}>
+                    +$48,500
                   </span>
                 </div>
               </div>
+
               <Link
                 to="/deals/oakwood-craftsman"
-                className="btn-g"
+                className="btn-o"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '10px',
-                  minHeight: '52px',
-                  border: '1px solid #343437',
+                  minHeight: '50px',
                   borderRadius: '999px',
-                  font: '500 15px Inter, system-ui, sans-serif',
+                  background: 'linear-gradient(135deg, #FF792E 0%, #FF9454 100%)',
+                  color: '#141414',
+                  font: '600 14px Inter, system-ui, sans-serif',
+                  textDecoration: 'none',
                 }}
               >
-                View deal{' '}
+                View Deal Package & Comps
                 <svg
                   width="15"
                   height="15"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -348,92 +365,137 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
+
+            {/* Companion Fee Split Dock */}
             <div
+              className="fee-split-card"
               style={{
-                position: 'relative',
-                alignSelf: 'flex-end',
-                width: 'min(340px, 100%)',
-                marginTop: '-70px',
-                marginRight: '-24px',
-                background: '#141414',
-                border: '1px solid #343437',
+                background: 'linear-gradient(180deg, #18181A 0%, #121213 100%)',
+                border: '1px solid #2E2E32',
                 borderRadius: '20px',
-                padding: '22px 24px',
+                padding: '20px 24px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '14px',
-                boxShadow: '0 30px 60px rgba(0,0,0,.55)',
+                gap: '12px',
+                boxShadow: '0 24px 50px rgba(0,0,0,.6)',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span
                   style={{
-                    color: '#A9ABB0',
-                    font: '500 10px Inter, system-ui, sans-serif',
+                    color: '#FF792E',
+                    font: '600 11px Inter, system-ui, sans-serif',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
                   }}
                 >
-                  Fee split
+                  Wholesaler Priority Split
                 </span>
-                <span style={{ font: "400 40px/1 Inter, system-ui, sans-serif" }}>
-                  55
-                  <span style={{ color: '#FF792E' }}>/</span>
-                  45
+                <span style={{ font: "600 36px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
+                  55<span style={{ color: '#FF792E' }}>%</span>
+                  <span style={{ fontSize: '20px', color: '#6A6C72', margin: '0 6px' }}>/</span>
+                  <span style={{ fontSize: '24px', color: '#8A8C91' }}>45%</span>
                 </span>
               </div>
-              <div style={{ display: 'flex', height: '4px', gap: '4px' }}>
-                <div style={{ width: '55%', background: '#FF792E', borderRadius: '99px' }} />
+              <div style={{ display: 'flex', height: '6px', borderRadius: '99px', overflow: 'hidden', gap: '3px', background: '#101011', padding: '1px' }}>
+                <div style={{ width: '55%', background: '#FF792E', borderRadius: '99px', boxShadow: '0 0 10px rgba(255,121,46,0.5)' }} />
                 <div style={{ width: '45%', background: '#343437', borderRadius: '99px' }} />
               </div>
-              <span style={{ color: '#8A8C91', font: '400 12px/1.5 Inter, system-ui, sans-serif' }}>
-                In favor of the wholesaler who brings the deal.
-              </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8A8C91', font: '400 12px Inter, system-ui, sans-serif' }}>
+                <span>Wholesaler (You): 55%</span>
+                <span>Dispo Team: 45%</span>
+              </div>
             </div>
           </div>
         </div>
-        <div style={{ paddingTop: '72px' }}>
+
+        {/* Search Bar Filter */}
+        <div style={{ paddingTop: '56px' }}>
           <form
             onSubmit={preventSubmit}
+            className="search-bar-form"
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'stretch',
-              background: '#1A1A1B',
-              border: '1px solid #262628',
+              background: 'linear-gradient(180deg, rgba(29, 29, 32, 0.9) 0%, rgba(20, 20, 22, 0.98) 100%)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              border: '1px solid #2C2C30',
               borderRadius: '999px',
-              padding: '8px',
-              gap: '4px',
+              padding: '8px 10px',
+              boxShadow: '0 24px 50px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 121, 46, 0.05)',
             }}
           >
             <label
+              className="search-field-divider"
               style={{
                 flex: '1 1 200px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 gap: '4px',
-                padding: '10px 26px',
-                borderRight: '1px solid #262628',
+                padding: '10px 24px',
+              }}
+            >
+              <span
+                style={{
+                  color: '#FF792E',
+                  font: '600 10px Inter, system-ui, sans-serif',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Target Market
+              </span>
+              <select className="srch" style={{ background: 'transparent', border: 0, color: '#F4F4F2', font: '500 15px Inter, system-ui, sans-serif', outline: 'none', cursor: 'pointer' }}>
+                <option value="">All Active Markets (Nationwide)</option>
+                <option value="columbus">Columbus, OH (Hub)</option>
+                <option value="indy">Indianapolis, IN</option>
+                <option value="charlotte">Charlotte, NC</option>
+                <option value="atlanta">Atlanta, GA</option>
+                <option value="memphis">Memphis, TN</option>
+                <option value="cleveland">Cleveland, OH</option>
+              </select>
+            </label>
+            <label
+              className="search-field-divider"
+              style={{
+                flex: '1 1 200px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                gap: '4px',
+                padding: '10px 24px',
               }}
             >
               <span
                 style={{
                   color: '#8A8C91',
-                  font: '500 10px Inter, system-ui, sans-serif',
+                  font: '600 10px Inter, system-ui, sans-serif',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
                 }}
               >
-                Market
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Property Type
               </span>
-              <select className="srch">
-                <option>All markets</option>
-                <option>Columbus, OH</option>
-                <option>Indianapolis, IN</option>
-                <option>Charlotte, NC</option>
-                <option>Atlanta, GA</option>
-                <option>Memphis, TN</option>
+              <select className="srch" style={{ background: 'transparent', border: 0, color: '#F4F4F2', font: '500 15px Inter, system-ui, sans-serif', outline: 'none', cursor: 'pointer' }}>
+                <option value="">Any Asset Class</option>
+                <option value="sfr">Single-Family Residence (SFR)</option>
+                <option value="mfr">Multifamily (2–4 Units)</option>
+                <option value="condo">Condo / Townhome</option>
+                <option value="land">Residential Land / Lot</option>
               </select>
             </label>
             <label
@@ -443,54 +505,32 @@ export default function Home() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 gap: '4px',
-                padding: '10px 26px',
-                borderRight: '1px solid #262628',
+                padding: '10px 24px',
               }}
             >
               <span
                 style={{
                   color: '#8A8C91',
-                  font: '500 10px Inter, system-ui, sans-serif',
+                  font: '600 10px Inter, system-ui, sans-serif',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
                 }}
               >
-                Property type
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                Contract Price
               </span>
-              <select className="srch">
-                <option>Any type</option>
-                <option>Single-family</option>
-                <option>Multifamily</option>
-                <option>Condo / Townhome</option>
-                <option>Land</option>
-              </select>
-            </label>
-            <label
-              style={{
-                flex: '1 1 200px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                gap: '4px',
-                padding: '10px 26px',
-              }}
-            >
-              <span
-                style={{
-                  color: '#8A8C91',
-                  font: '500 10px Inter, system-ui, sans-serif',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Price range
-              </span>
-              <select className="srch">
-                <option>Any price</option>
-                <option>Under $100k</option>
-                <option>$100k – $250k</option>
-                <option>$250k – $500k</option>
-                <option>$500k+</option>
+              <select className="srch" style={{ background: 'transparent', border: 0, color: '#F4F4F2', font: '500 15px Inter, system-ui, sans-serif', outline: 'none', cursor: 'pointer' }}>
+                <option value="">Any Purchase Price</option>
+                <option value="under-100k">Entry Level (Under $100k)</option>
+                <option value="100k-250k">Core Wholesale ($100k – $250k)</option>
+                <option value="250k-500k">Mid-Market ($250k – $500k)</option>
+                <option value="500k-plus">High Value ($500k+)</option>
               </select>
             </label>
             <Link
@@ -501,21 +541,23 @@ export default function Home() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                minHeight: '60px',
-                padding: '0 30px',
+                minHeight: '56px',
+                padding: '0 28px',
                 borderRadius: '999px',
-                background: '#FF792E',
+                background: 'linear-gradient(135deg, #FF792E 0%, #FF9454 100%)',
                 color: '#141414',
                 font: '600 15px Inter, system-ui, sans-serif',
+                boxShadow: '0 8px 24px rgba(255,121,46,0.3)',
+                transition: 'all 0.25s ease',
               }}
             >
               <svg
-                width="17"
-                height="17"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2.2"
+                strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -523,16 +565,29 @@ export default function Home() {
                 <circle cx="11" cy="11" r="8" />
                 <path d="m21 21-4.3-4.3" />
               </svg>
-              Explore Available Deals
+              Explore 18 Deals
             </Link>
           </form>
         </div>
-        <div style={{ marginTop: '56px', display: 'flex', alignItems: 'center', gap: '32px', overflow: 'hidden' }}>
-          <span style={{ flex: 'none' }}>
+        <div
+          style={{
+            marginTop: '44px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '24px',
+            padding: '14px 22px',
+            background: 'rgba(24, 24, 27, 0.45)',
+            border: '1px solid rgba(255, 255, 255, 0.06)',
+            borderRadius: '16px',
+            overflow: 'hidden',
+          }}
+        >
+          <span style={{ flex: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ width: '7px', height: '7px', borderRadius: '99px', background: '#FF792E', boxShadow: '0 0 8px rgba(255,121,46,0.6)' }} />
             <span
               style={{
                 color: '#8A8C91',
-                font: '500 11px Inter, system-ui, sans-serif',
+                font: '600 11px Inter, system-ui, sans-serif',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
               }}
@@ -545,7 +600,9 @@ export default function Home() {
               flex: '1',
               overflow: 'hidden',
               color: '#A9ABB0',
-              font: "400 22px Inter, system-ui, sans-serif",
+              font: "400 19px Inter, system-ui, sans-serif",
+              maskImage: 'linear-gradient(to right, transparent, black 4%, black 96%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 4%, black 96%, transparent)',
             }}
           >
             <div className="tick" style={{ gap: '40px' }}>
@@ -610,7 +667,7 @@ export default function Home() {
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -690,614 +747,316 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px 28px' }}>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph"
-                  style={{
-                    position: 'relative',
-                    height: '400px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman single-family home in Columbus, Ohio" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    Available
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
+          {/* Card 1: Oakwood Craftsman */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph">
+              <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman single-family home in Columbus, Ohio" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Available
+                </span>
+                <span className="spread-badge">
+                  +$48,500 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Columbus, OH
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Oakwood Craftsman
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>3 bd · 2 ba · 1,420 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $235,000 · Repairs $38,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Oakwood Craftsman
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$148,500</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">3 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">1,420 Sq Ft</span>
+                <span className="spec-tag">Single Family</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $148,500
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $235k · $38k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph2"
-                  style={{
-                    position: 'relative',
-                    height: '400px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.duplex} alt="Brick duplex exterior at Linden Street, a multifamily wholesale deal" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    New
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+
+          {/* Card 2: Linden Street Duplex */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph2">
+              <Img src={img.duplex} alt="Brick duplex exterior at Linden Street, a multifamily wholesale deal" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Just Listed
+                </span>
+                <span className="spread-badge">
+                  +$52,000 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Columbus, OH
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Linden Street Duplex
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>4 bd · 2 ba · 2,140 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $285,000 · Repairs $41,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Linden Street Duplex
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$192,000</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">4 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">2,140 Sq Ft</span>
+                <span className="spec-tag">Multifamily</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $192,000
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $285k · $41k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph"
-                  style={{
-                    position: 'relative',
-                    height: '400px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.condo} alt="Modern condo building exterior at Penrose Court" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    Available
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+
+          {/* Card 3: Penrose Court Condo */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph">
+              <Img src={img.condo} alt="Modern condo building exterior at Penrose Court" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Available
+                </span>
+                <span className="spread-badge">
+                  +$39,500 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Charlotte, NC
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Penrose Court Condo
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>2 bd · 2 ba · 980 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $148,000 · Repairs $12,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Penrose Court Condo
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$96,500</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">2 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">980 Sq Ft</span>
+                <span className="spec-tag">Condo</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $96,500
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $148k · $12k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            rowGap: '40px',
-            padding: '56px 0',
-            borderTop: '1px solid #262628',
-            borderBottom: '1px solid #262628',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
+            gap: '20px',
           }}
         >
-          <div style={{ padding: '8px 32px 8px 0px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            <span
-              style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.02em',
-              }}
-            >
-              1,800
-              <span style={{ color: '#FF792E' }}>+</span>
+          <div className="stat-box-modern">
+            <span style={{ color: '#FF792E', font: '600 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              Buyer Network
             </span>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Verified cash buyers
+            <span style={{ font: "400 clamp(48px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif", letterSpacing: '-0.02em', color: '#FFFFFF' }}>
+              1,800<span style={{ color: '#FF792E' }}>+</span>
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 14px/1.5 Inter, system-ui, sans-serif' }}>
+              Verified cash buyers actively reviewing wholesale deals across core markets.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.02em',
-              }}
-            >
-              340
-              <span style={{ color: '#FF792E' }}>+</span>
+
+          <div className="stat-box-modern">
+            <span style={{ color: '#FF792E', font: '600 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              Track Record
             </span>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Deals assigned since 2019
+            <span style={{ font: "400 clamp(48px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif", letterSpacing: '-0.02em', color: '#FFFFFF' }}>
+              340<span style={{ color: '#FF792E' }}>+</span>
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 14px/1.5 Inter, system-ui, sans-serif' }}>
+              Off-market deals successfully assigned to closing tables since 2019.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.02em',
-              }}
-            >
-              12
+
+          <div className="stat-box-modern">
+            <span style={{ color: '#FF792E', font: '600 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              Speed To Lockup
             </span>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Median days to assign
+            <span style={{ font: "400 clamp(48px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif", letterSpacing: '-0.02em', color: '#FFFFFF' }}>
+              12 <span style={{ fontSize: '28px', color: '#FF792E' }}>Days</span>
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 14px/1.5 Inter, system-ui, sans-serif' }}>
+              Median timeline from contract submission to signed assignment agreement.
             </span>
           </div>
-          <div
-            style={{
-              padding: '8px 32px 8px 32px',
-              borderLeft: '1px solid #262628',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-            }}
-          >
-            <span
-              style={{
-                font: "400 clamp(56px, 6vw, 88px)/0.9 Inter, system-ui, sans-serif",
-                letterSpacing: '-0.02em',
-              }}
-            >
-              55/45
+
+          <div className="stat-box-modern">
+            <span style={{ color: '#FF792E', font: '600 11px Inter, system-ui, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+              Wholesaler First
             </span>
-            <span
-              style={{
-                color: '#A9ABB0',
-                font: '500 11px Inter, system-ui, sans-serif',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Fee split in your favor
+            <span style={{ font: "400 clamp(48px, 5.5vw, 76px)/0.9 Inter, system-ui, sans-serif", letterSpacing: '-0.02em', color: '#FFFFFF' }}>
+              55<span style={{ color: '#FF792E' }}>/</span>45
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 14px/1.5 Inter, system-ui, sans-serif' }}>
+              Fee split strictly in your favor — keeping more revenue where it belongs.
             </span>
           </div>
         </div>
       </section>
       <section
-        style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '150px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))',
-          gap: '80px',
-          alignItems: 'stretch',
-        }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}>
-          <span
-            style={{
-              alignSelf: 'flex-start',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '14px',
-              color: '#FF792E',
-              font: '500 12px Inter, system-ui, sans-serif',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-            }}
-          >
-            <span style={{ color: '#A9ABB0' }}>(02)</span>
-            <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
-            How it works
-          </span>
-          <h2
-            style={{
-              margin: '0',
-              font: "400 clamp(42px, 4.8vw, 72px)/1.0 Inter, system-ui, sans-serif",
-              letterSpacing: '-0.015em',
-            }}
-          >
-            Three steps from <em style={{ fontStyle: 'italic', color: '#FF792E' }}>contract</em> to closing.
-          </h2>
-          <p
-            style={{
-              margin: '0',
-              maxWidth: '440px',
-              color: '#A9ABB0',
-              font: '400 16px/1.7 Inter, system-ui, sans-serif',
-            }}
-          >
-            Every deal is different, but the way we work it stays the same: honest review, targeted marketing, and one
-            point of contact who knows where your file stands.
-          </p>
-          <div style={{ paddingTop: '8px' }}>
-            <Link
-              to="/submit-deal"
-              className="btn-o"
+        {/* Header row */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            gap: '32px',
+            marginBottom: '64px',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '620px' }}>
+            <span
               style={{
+                alignSelf: 'flex-start',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '16px',
-                minHeight: '58px',
-                padding: '0 8px 0 26px',
-                background: '#FF792E',
-                borderRadius: '999px',
-                color: '#141414',
-                font: '600 15px Inter, system-ui, sans-serif',
+                gap: '14px',
+                color: '#FF792E',
+                font: '500 12px Inter, system-ui, sans-serif',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
               }}
             >
-              Submit Your Deal
-              <span
+              <span style={{ color: '#A9ABB0' }}>(02)</span>
+              <span style={{ width: '32px', height: '1px', background: '#FF792E' }} />
+              How it works
+            </span>
+            <h2
+              style={{
+                margin: '0',
+                font: "400 clamp(42px, 4.8vw, 72px)/1.0 Inter, system-ui, sans-serif",
+                letterSpacing: '-0.015em',
+              }}
+            >
+              Three steps from <em style={{ fontStyle: 'italic', color: '#FF792E' }}>contract</em> to closing.
+            </h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '400px' }}>
+            <p
+              style={{
+                margin: '0',
+                color: '#A9ABB0',
+                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+              }}
+            >
+              Every deal is different, but the way we work it stays the same: honest review, targeted marketing, and one
+              point of contact who knows where your file stands.
+            </p>
+            <div>
+              <Link
+                to="/submit-deal"
+                className="lnk"
                 style={{
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '99px',
-                  background: '#141414',
+                  alignSelf: 'flex-start',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  gap: '10px',
+                  font: '500 15px Inter, system-ui, sans-serif',
                 }}
               >
+                Submit your deal
                 <svg
-                  width="15"
-                  height="15"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#FF792E"
-                  strokeWidth="2.2"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
@@ -1305,87 +1064,168 @@ export default function Home() {
                   <path d="M7 7h10v10" />
                   <path d="M7 17 17 7" />
                 </svg>
-              </span>
-            </Link>
-          </div>
-          <div
-            className="ph2"
-            style={{
-              position: 'relative',
-              /* Grows to match the taller steps column so both sides end level. */
-              flex: '1 1 auto',
-              minHeight: '300px',
-              borderRadius: '18px',
-              overflow: 'hidden',
-              border: '1px solid #262628',
-              marginTop: '24px',
-            }}
-          >
-            <Img src={img.signing} alt="Wholesaler signing a purchase contract during a disposition handoff" width={1200} height={800} />
+              </Link>
+            </div>
           </div>
         </div>
-        <ol style={{ listStyle: 'none', margin: '0', padding: '0', borderTop: '1px solid #262628' }}>
-          <li
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '80px minmax(0, 1fr)',
-              gap: '20px',
-              padding: '34px 0',
-              borderBottom: '1px solid #262628',
-            }}
-          >
-            <span style={{ color: '#FF792E', font: "italic 400 44px/1 Inter, system-ui, sans-serif" }}>01</span>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ font: "400 34px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Submit
-              </span>
-              <span style={{ color: '#A9ABB0', font: '400 16px/1.7 Inter, system-ui, sans-serif', maxWidth: '480px' }}>
-                Send us your contracted deal: the address, your numbers, photos and the closing timeline.
-              </span>
-            </div>
-          </li>
-          <li
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '80px minmax(0, 1fr)',
-              gap: '20px',
-              padding: '34px 0',
-              borderBottom: '1px solid #262628',
-            }}
-          >
-            <span style={{ color: '#FF792E', font: "italic 400 44px/1 Inter, system-ui, sans-serif" }}>02</span>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ font: "400 34px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Market
-              </span>
-              <span style={{ color: '#A9ABB0', font: '400 16px/1.7 Inter, system-ui, sans-serif', maxWidth: '480px' }}>
-                We evaluate and promote the opportunity to buyers in our network who match the deal.
-              </span>
-            </div>
-          </li>
-          <li
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '80px minmax(0, 1fr)',
-              gap: '20px',
-              padding: '34px 0',
-              borderBottom: '1px solid #262628',
-            }}
-          >
-            <span style={{ color: '#FF792E', font: "italic 400 44px/1 Inter, system-ui, sans-serif" }}>03</span>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ font: "400 34px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Coordinate
-              </span>
-              <span style={{ color: '#A9ABB0', font: '400 16px/1.7 Inter, system-ui, sans-serif', maxWidth: '480px' }}>
-                We help connect interested buyers and advance the transaction toward closing.
+        {/* Step cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '20px' }}>
+          <div className="how-it-works-card">
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                height: '2px',
+                background: 'linear-gradient(90deg, #FF792E 0%, transparent 100%)',
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <span className="step-num">01</span>
+              <span
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '99px',
+                  border: '1px solid #343437',
+                  background: 'rgba(255, 121, 46, 0.08)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#FF792E"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M10 18v-4" />
+                  <path d="M14 18v-6" />
+                </svg>
               </span>
             </div>
-          </li>
-        </ol>
+            <span style={{ font: "400 28px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#F4F4F2' }}>
+              Submit
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
+              Send us your contracted deal: the address, your numbers, photos and the closing timeline.
+            </span>
+          </div>
+          <div className="how-it-works-card">
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                height: '2px',
+                background: 'linear-gradient(90deg, #FF792E 0%, transparent 100%)',
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <span className="step-num">02</span>
+              <span
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '99px',
+                  border: '1px solid #343437',
+                  background: 'rgba(255, 121, 46, 0.08)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#FF792E"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
+                  <rect x="2" y="6" width="14" height="12" rx="2" />
+                </svg>
+              </span>
+            </div>
+            <span style={{ font: "400 28px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#F4F4F2' }}>
+              Market
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
+              We evaluate and promote the opportunity to buyers in our network who match the deal.
+            </span>
+          </div>
+          <div className="how-it-works-card">
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                height: '2px',
+                background: 'linear-gradient(90deg, #FF792E 0%, transparent 100%)',
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <span className="step-num">03</span>
+              <span
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '99px',
+                  border: '1px solid #343437',
+                  background: 'rgba(255, 121, 46, 0.08)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#FF792E"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                  <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                  <path d="m21 3 1 11h-2" />
+                  <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                  <path d="M3 4h8" />
+                </svg>
+              </span>
+            </div>
+            <span style={{ font: "400 28px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#F4F4F2' }}>
+              Coordinate
+            </span>
+            <span style={{ color: '#A9ABB0', font: '400 15px/1.7 Inter, system-ui, sans-serif' }}>
+              We help connect interested buyers and advance the transaction toward closing.
+            </span>
+          </div>
+        </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -1498,150 +1338,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '36px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '16px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span
-                    style={{
-                      color: '#FF792E',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    You
-                  </span>
-                  <span style={{ font: "400 72px/0.9 Inter, system-ui, sans-serif" }}>
-                    55
-                    <span style={{ color: '#FF792E' }}>%</span>
-                  </span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
-                  <span
-                    style={{
-                      color: '#A9ABB0',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    Dispo With Don
-                  </span>
-                  <span style={{ font: "400 72px/0.9 Inter, system-ui, sans-serif", color: '#A9ABB0' }}>45%</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', height: '4px', borderRadius: '99px', overflow: 'hidden', gap: '4px' }}>
-                <div style={{ width: '55%', background: '#FF792E', borderRadius: '99px' }} />
-                <div style={{ width: '45%', background: '#343437', borderRadius: '99px' }} />
-              </div>
-              <span style={{ color: '#8A8C91', font: '400 13px Inter, system-ui, sans-serif' }}>
-                Assignment fee split, in favor of the wholesaler who brings the deal.
-              </span>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #262628' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '20px 0',
-                  borderBottom: '1px solid #262628',
-                }}
-              >
-                <span style={{ font: "400 24px Inter, system-ui, sans-serif" }}>Wholesale dispositions</span>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '20px 0',
-                  borderBottom: '1px solid #262628',
-                }}
-              >
-                <span style={{ font: "400 24px Inter, system-ui, sans-serif" }}>Buyer outreach</span>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '20px 0',
-                  borderBottom: '1px solid #262628',
-                }}
-              >
-                <span style={{ font: "400 24px Inter, system-ui, sans-serif" }}>Deal marketing</span>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '20px 0',
-                  borderBottom: '1px solid #262628',
-                }}
-              >
-                <span style={{ font: "400 24px Inter, system-ui, sans-serif" }}>Transaction coordination</span>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-            </div>
+          <div style={{ position: 'relative', minWidth: 0 }}>
+            <FeeSplitCalculator />
           </div>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -1720,7 +1423,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px 28px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '48px 28px' }}>
           <Link to="/services" className="card" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
               <div className="lift">
@@ -1918,7 +1621,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section aria-hidden="true" style={{ paddingTop: '150px', overflow: 'hidden' }}>
+      <section aria-hidden="true" style={{ paddingTop: 'var(--section-pad)', overflow: 'hidden' }}>
         <Ticker
           items={MARQUEE}
           className="mq outline"
@@ -1932,7 +1635,7 @@ export default function Home() {
         />
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -1995,12 +1698,9 @@ export default function Home() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '150px',
+          paddingTop: 'var(--section-pad)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
           gap: '64px',
@@ -2076,20 +1776,20 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #262628' }}>
-          <details open style={{ borderBottom: '1px solid #262628' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <details open className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '18px 0',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>01</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 500 22px Inter, system-ui, sans-serif" }}>01</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                   How is the assignment fee split?
                 </span>
               </span>
@@ -2097,8 +1797,8 @@ export default function Home() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
@@ -2112,29 +1812,29 @@ export default function Home() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 16px 42px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              55/45, in favor of the wholesaler who brings the deal. You keep 55% of the assignment fee and Dispo With
+              55/45, strictly in favor of the wholesaler who brings the deal. You keep 55% of the total assignment fee and Dispo With
               Don earns 45%, agreed in writing before we market anything.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '18px 0',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>02</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 500 22px Inter, system-ui, sans-serif" }}>02</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                   Do I need the property under contract first?
                 </span>
               </span>
@@ -2142,8 +1842,8 @@ export default function Home() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
@@ -2157,29 +1857,29 @@ export default function Home() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 16px 42px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Yes. We market contracted deals with assignment rights in place. If you're still negotiating, call us
-              early and we'll tell you whether the numbers are likely to work.
+              Yes. We market contracted deals with clear assignment rights in place. If you're still negotiating with the seller, call us
+              early and we'll evaluate whether your target numbers will clear our buyer network.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '18px 0',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>03</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 500 22px Inter, system-ui, sans-serif" }}>03</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                   Which markets do you work in?
                 </span>
               </span>
@@ -2187,8 +1887,8 @@ export default function Home() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
@@ -2202,29 +1902,29 @@ export default function Home() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 16px 42px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Our buyer network is nationwide, with the most depth across the Midwest and Southeast, including Columbus,
-              Indianapolis, Charlotte, Atlanta and Memphis.
+              Our buyer network is nationwide, with the deepest institutional and cash-buyer pools across the Midwest and Southeast, including Columbus,
+              Indianapolis, Charlotte, Atlanta, Memphis, and Cleveland.
             </p>
           </details>
-          <details style={{ borderBottom: '1px solid #262628' }}>
+          <details className="faq-item">
             <summary
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '24px',
-                padding: '28px 0',
+                padding: '18px 0',
               }}
             >
-              <span style={{ display: 'flex', gap: '24px', alignItems: 'baseline' }}>
-                <span style={{ color: '#FF792E', font: "italic 400 20px Inter, system-ui, sans-serif" }}>04</span>
-                <span style={{ font: "400 clamp(22px, 2vw, 28px)/1.25 Inter, system-ui, sans-serif" }}>
+              <span style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
+                <span style={{ color: '#FF792E', font: "italic 500 22px Inter, system-ui, sans-serif" }}>04</span>
+                <span style={{ font: "500 clamp(20px, 2vw, 24px)/1.25 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>
                   How fast do deals usually assign?
                 </span>
               </span>
@@ -2232,8 +1932,8 @@ export default function Home() {
                 className="plus"
                 style={{
                   flex: 'none',
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '99px',
                   border: '1px solid #343437',
                   display: 'inline-flex',
@@ -2247,20 +1947,19 @@ export default function Home() {
             </summary>
             <p
               style={{
-                margin: '0 0 30px 46px',
+                margin: '0 0 16px 42px',
                 maxWidth: '640px',
                 color: '#A9ABB0',
-                font: '400 16px/1.7 Inter, system-ui, sans-serif',
+                font: '400 15px/1.7 Inter, system-ui, sans-serif',
               }}
             >
-              Light-scope deals priced correctly often assign within a week. Heavier rehabs take longer because the
-              buyer pool is smaller.
+              Light-scope opportunities priced to market usually assign within 5 to 8 business days. Our median across all 340+ deals is 12 days to executed assignment agreement.
             </p>
           </details>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container" style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -2337,6 +2036,17 @@ export default function Home() {
               Send the address, your numbers and the contract timeline. We review every submission and come back with an
               honest read.
             </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
+              <span className="spec-tag" style={{ color: '#FF792E', borderColor: 'rgba(255,121,46,0.3)', background: 'rgba(255,121,46,0.08)' }}>
+                ✓ 55% Wholesaler Cut
+              </span>
+              <span className="spec-tag">
+                ✓ 1,800+ Cash Buyers
+              </span>
+              <span className="spec-tag">
+                ✓ No Upfront Fees
+              </span>
+            </div>
             <div
               style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', paddingTop: '6px' }}
             >

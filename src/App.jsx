@@ -14,24 +14,29 @@ export default function App() {
     <div
       style={{
         minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        position: 'relative',
         background: '#141414',
         color: '#F4F4F2',
         fontFamily: 'Inter, system-ui, sans-serif',
-        overflow: 'hidden',
       }}
     >
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/deals" element={<Deals />} />
-        <Route path="/deals/:slug" element={<DealDetail />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/submit-deal" element={<SubmitDeal />} />
-        <Route path="/buyers-network" element={<BuyersNetwork />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <main id="main-content" style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', width: '100%' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/deals" element={<Deals />} />
+          <Route path="/deals/:slug" element={<DealDetail />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/submit-deal" element={<SubmitDeal />} />
+          <Route path="/buyers-network" element={<BuyersNetwork />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </main>
     </div>
   )
 }

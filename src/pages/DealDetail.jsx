@@ -12,12 +12,9 @@ export default function DealDetail() {
     <>
       <Header active="Deals" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '56px',
+          paddingTop: 'clamp(32px, 4.5vw, 56px)',
           display: 'flex',
           flexDirection: 'column',
           gap: '40px',
@@ -231,18 +228,19 @@ export default function DealDetail() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
-              columnGap: '32px',
-              borderTop: '1px solid #262628',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))',
+              gap: '14px',
             }}
           >
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -255,15 +253,17 @@ export default function DealDetail() {
               >
                 Asking price
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>$148,500</span>
+              <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>$148,500</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -276,15 +276,17 @@ export default function DealDetail() {
               >
                 Estimated ARV
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>$235,000</span>
+              <span style={{ font: "500 28px/1 Inter, system-ui, sans-serif", color: '#D4D5D8' }}>$235,000</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -297,36 +299,41 @@ export default function DealDetail() {
               >
                 Repair estimate
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>$38,000</span>
+              <span style={{ font: "500 28px/1 Inter, system-ui, sans-serif", color: '#D4D5D8' }}>$38,000</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, rgba(255,121,46,0.12) 0%, rgba(26,26,27,0.95) 100%)',
+                border: '1px solid rgba(255,121,46,0.4)',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
+                boxShadow: '0 0 20px rgba(255,121,46,0.08)',
               }}
             >
               <span
                 style={{
-                  color: '#8A8C91',
-                  font: '500 10px Inter, system-ui, sans-serif',
+                  color: '#FF792E',
+                  font: '600 10px Inter, system-ui, sans-serif',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
                 }}
               >
-                Potential spread
+                Gross Spread
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif", color: '#FF792E' }}>$48,500</span>
+              <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FF792E' }}>+$48,500</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -339,15 +346,17 @@ export default function DealDetail() {
               >
                 Beds / Baths
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>3 / 2</span>
+              <span style={{ font: "500 28px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>3 / 2</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -360,15 +369,17 @@ export default function DealDetail() {
               >
                 Living area
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>1,420 sq ft</span>
+              <span style={{ font: "500 24px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>1,420 sq ft</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -381,15 +392,17 @@ export default function DealDetail() {
               >
                 Year built
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>1948</span>
+              <span style={{ font: "500 28px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>1948</span>
             </div>
             <div
               style={{
-                padding: '26px 0',
-                borderBottom: '1px solid #262628',
+                background: 'linear-gradient(180deg, #1c1c1e 0%, #151516 100%)',
+                border: '1px solid #28282b',
+                borderRadius: '16px',
+                padding: '20px 22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '8px',
               }}
             >
               <span
@@ -402,7 +415,7 @@ export default function DealDetail() {
               >
                 Lot size
               </span>
-              <span style={{ font: "400 34px/1 Inter, system-ui, sans-serif" }}>0.17 ac</span>
+              <span style={{ font: "500 28px/1 Inter, system-ui, sans-serif", color: '#F4F4F2' }}>0.17 ac</span>
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
@@ -459,7 +472,7 @@ export default function DealDetail() {
                 margin: '0',
                 padding: '0',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
                 columnGap: '40px',
                 borderTop: '1px solid #262628',
               }}
@@ -705,7 +718,6 @@ export default function DealDetail() {
                         letterSpacing: '0.18em',
                         textTransform: 'uppercase',
                         color: '#8A8C91',
-                        textAlign: 'left',
                         textAlign: 'right',
                       }}
                     >
@@ -1003,7 +1015,8 @@ export default function DealDetail() {
         </aside>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container"
+        style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
@@ -1072,7 +1085,7 @@ export default function DealDetail() {
             </Link>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px 28px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '48px 28px' }}>
           <Link
             to="/deals/oakwood-craftsman"
             className="card"

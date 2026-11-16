@@ -12,13 +12,10 @@ export default function Deals() {
     <>
       <Header active="Deals" />
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
           position: 'relative',
-          paddingTop: '72px',
+          paddingTop: 'clamp(36px, 5vw, 64px)',
         }}
       >
         <div
@@ -104,12 +101,9 @@ export default function Deals() {
         </div>
       </section>
       <section
+        className="site-container"
         style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          paddingTop: '48px',
+          paddingTop: '36px',
           display: 'flex',
           flexDirection: 'column',
           gap: '36px',
@@ -250,835 +244,391 @@ export default function Deals() {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            alignItems: 'center',
             gap: '16px',
-            borderBottom: '1px solid #262628',
+            paddingTop: '8px',
           }}
         >
           <nav
             aria-label="Deal categories"
-            style={{ display: 'flex', flexWrap: 'wrap', gap: '32px', font: '500 14px Inter, system-ui, sans-serif' }}
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', font: '500 13px Inter, system-ui, sans-serif' }}
           >
-            <a href="#" style={{ paddingBottom: '14px', borderBottom: '1px solid #FF792E', color: '#F4F4F2' }}>
-              All deals · 18
-            </a>
-            <a className="nav-a" href="#" style={{ paddingBottom: '14px' }}>
+            <button type="button" className="filter-pill-btn active">
+              All Deals · 18
+            </button>
+            <button type="button" className="filter-pill-btn">
               Single-family · 9
-            </a>
-            <a className="nav-a" href="#" style={{ paddingBottom: '14px' }}>
+            </button>
+            <button type="button" className="filter-pill-btn">
               Multifamily · 5
-            </a>
-            <a className="nav-a" href="#" style={{ paddingBottom: '14px' }}>
+            </button>
+            <button type="button" className="filter-pill-btn">
               Condo · 3
-            </a>
-            <a className="nav-a" href="#" style={{ paddingBottom: '14px' }}>
-              Land · 1
-            </a>
+            </button>
+            <button type="button" className="filter-pill-btn">
+              High Spread ($35k+) · 6
+            </button>
           </nav>
-          <span style={{ paddingBottom: '14px', color: '#8A8C91', font: '400 14px Inter, system-ui, sans-serif' }}>
-            Showing 6 of 18
+          <span style={{ color: '#8A8C91', font: '500 13px Inter, system-ui, sans-serif' }}>
+            Showing <strong style={{ color: '#F4F4F2' }}>6</strong> verified opportunities
           </span>
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '48px' }}
+        className="site-container"
+        style={{ paddingTop: '36px' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '48px 28px' }}>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman in Columbus, Ohio" width={1200} height={900} priority />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    Available
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
+          {/* Card 1: Oakwood Craftsman */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph">
+              <Img src={img.craftsman} alt="Front exterior of the Oakwood Craftsman in Columbus, Ohio" width={1200} height={900} priority />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Available
+                </span>
+                <span className="spread-badge">
+                  +$48,500 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Columbus, OH
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Oakwood Craftsman
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>3 bd · 2 ba · 1,420 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $235,000 · Repairs $38,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Oakwood Craftsman
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$148,500</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">3 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">1,420 Sq Ft</span>
+                <span className="spec-tag">Single Family</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $148,500
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $235k · $38k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph2"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.duplex} alt="Linden Street Duplex, a two-unit multifamily investment property" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    New
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+
+          {/* Card 2: Linden Street Duplex */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph2">
+              <Img src={img.duplex} alt="Linden Street Duplex, a two-unit multifamily investment property" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  New
+                </span>
+                <span className="spread-badge">
+                  +$52,000 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Columbus, OH
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Linden Street Duplex
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>4 bd · 2 ba · 2,140 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $285,000 · Repairs $41,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Linden Street Duplex
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$192,000</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">4 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">2,140 Sq Ft</span>
+                <span className="spec-tag">Multifamily</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $192,000
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $285k · $41k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.condo} alt="Penrose Court Condo building exterior" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    Available
-                  </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
-                  </span>
-                </div>
+
+          {/* Card 3: Penrose Court Condo */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph">
+              <Img src={img.condo} alt="Penrose Court Condo building exterior" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Available
+                </span>
+                <span className="spread-badge">
+                  +$39,500 Spread
+                </span>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Charlotte, NC
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Penrose Court Condo
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>2 bd · 2 ba · 980 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $148,000 · Repairs $12,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Penrose Court Condo
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$96,500</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">2 Beds</span>
+                <span className="spec-tag">2 Baths</span>
+                <span className="spec-tag">980 Sq Ft</span>
+                <span className="spec-tag">Condo</span>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph2"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.ranch} alt="Maple Ridge Ranch, a single-story home with a front lawn" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    Available
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
                   </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $96,500
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $148k · $12k rep
                   </span>
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+          </Link>
+
+          {/* Card 4: Maple Ridge Ranch */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph2">
+              <Img src={img.ranch} alt="Maple Ridge Ranch, a single-story home with a front lawn" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  Available
+                </span>
+                <span className="spread-badge">
+                  +$40,500 Spread
+                </span>
+              </div>
+            </div>
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Indianapolis, IN
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Maple Ridge Ranch
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>3 bd · 1.5 ba · 1,260 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $189,000 · Repairs $27,500</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Maple Ridge Ranch
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$121,000</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">3 Beds</span>
+                <span className="spec-tag">1.5 Baths</span>
+                <span className="spec-tag">1,260 Sq Ft</span>
+                <span className="spec-tag">Ranch</span>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.townhomes} alt="Hillcrest Townhomes, a row of attached townhouses" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#A9ABB0' }} />
-                    Pending
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
                   </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $121,000
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $189k · $27k rep
                   </span>
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+          </Link>
+
+          {/* Card 5: Hillcrest Townhomes */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph">
+              <Img src={img.townhomes} alt="Hillcrest Townhomes, a row of attached townhouses" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#A9ABB0' }} />
+                  Pending
+                </span>
+                <span className="spread-badge">
+                  +$134,000 Spread
+                </span>
+              </div>
+            </div>
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Atlanta, GA
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Hillcrest Townhomes
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>8 bd · 8 ba · 4,800 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $610,000 · Repairs $64,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Hillcrest Townhomes
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$412,000</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">8 Beds</span>
+                <span className="spec-tag">8 Baths</span>
+                <span className="spec-tag">4,800 Sq Ft</span>
+                <span className="spec-tag">Portfolio</span>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="/deals/oakwood-craftsman"
-            className="card"
-            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          >
-            <div style={{ borderRadius: '18px', overflow: 'hidden' }}>
-              <div className="lift">
-                <div
-                  className="ph2"
-                  style={{
-                    position: 'relative',
-                    height: '340px',
-                    borderRadius: '18px',
-                    overflow: 'hidden',
-                    border: '1px solid #262628',
-                  }}
-                >
-                  <Img src={img.modern} alt="Westbrook Modern, a contemporary single-family home in Memphis, Tennessee" width={1200} height={900} />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(20,20,20,.78)',
-                      border: '1px solid #343437',
-                      borderRadius: '999px',
-                      padding: '7px 12px',
-                      font: '500 11px Inter, system-ui, sans-serif',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
-                    New
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
                   </span>
-                  <span
-                    className="arr"
-                    style={{
-                      position: 'absolute',
-                      top: '14px',
-                      right: '14px',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '99px',
-                      border: '1px solid #343437',
-                      background: 'rgba(20,20,20,.78)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#F4F4F2',
-                    }}
-                  >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 7h10v10" />
-                      <path d="M7 17 17 7" />
-                    </svg>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $412,000
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $610k · $64k rep
                   </span>
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FF792E"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span
-                  style={{
-                    color: '#A9ABB0',
-                    font: '500 11px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
+          </Link>
+
+          {/* Card 6: Westbrook Modern */}
+          <Link to="/deals/oakwood-craftsman" className="deal-card-premium">
+            <div className="card-img-wrap ph2">
+              <Img src={img.modern} alt="Westbrook Modern, a contemporary single-family home in Memphis, Tennessee" width={1200} height={900} />
+              <div style={{ position: 'absolute', top: '14px', left: '14px', right: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
+                <span className="glass-pill">
+                  <span style={{ width: '6px', height: '6px', borderRadius: '99px', background: '#FF792E' }} />
+                  New
+                </span>
+                <span className="spread-badge">
+                  +$68,000 Spread
+                </span>
+              </div>
+            </div>
+
+            <div style={{ padding: '20px 8px 8px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#FF792E', font: '500 11px Inter, system-ui, sans-serif', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF792E" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Memphis, TN
                 </span>
-              </span>
-              <span style={{ font: "400 30px/1.1 Inter, system-ui, sans-serif", letterSpacing: '-0.01em' }}>
-                Westbrook Modern
-              </span>
-            </div>
-            <div style={{ height: '1px', background: '#262628' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '12px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                  color: '#A9ABB0',
-                  font: '400 14px Inter, system-ui, sans-serif',
-                }}
-              >
-                <span>4 bd · 3 ba · 2,050 sq ft</span>
-                <span style={{ color: '#8A8C91', fontSize: '13px' }}>ARV $305,000 · Repairs $22,000</span>
+                <h3 style={{ margin: 0, font: "500 26px/1.15 Inter, system-ui, sans-serif", letterSpacing: '-0.01em', color: '#FFFFFF' }}>
+                  Westbrook Modern
+                </h3>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <span
-                  style={{
-                    color: '#8A8C91',
-                    font: '500 10px Inter, system-ui, sans-serif',
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Asking
-                </span>
-                <span style={{ font: "400 30px/1 Inter, system-ui, sans-serif" }}>$214,900</span>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span className="spec-tag">4 Beds</span>
+                <span className="spec-tag">3 Baths</span>
+                <span className="spec-tag">2,050 Sq Ft</span>
+                <span className="spec-tag">Single Family</span>
+              </div>
+
+              <div style={{ height: '1px', background: '#262628' }} />
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    Contract Asking
+                  </span>
+                  <span style={{ font: "700 28px/1 Inter, system-ui, sans-serif", color: '#FFFFFF' }}>
+                    $214,900
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                  <span style={{ color: '#8A8C91', font: '500 10px Inter, system-ui, sans-serif', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                    ARV / Repairs
+                  </span>
+                  <span style={{ font: "500 14px Inter, system-ui, sans-serif", color: '#A9ABB0' }}>
+                    $305k · $22k rep
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
@@ -1167,7 +717,8 @@ export default function Deals() {
         </div>
       </section>
       <section
-        style={{ maxWidth: '1320px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '150px' }}
+        className="site-container"
+        style={{ paddingTop: 'var(--section-pad)' }}
       >
         <div
           style={{
