@@ -1786,13 +1786,15 @@ aside .steps li::before {
   transform: rotateX(-2deg) rotateY(3deg) scale(1.01);
 }
 
-/* Scroll reveal — hidden by default, revealed with .revealed */
-.reveal-up {
+/* Scroll reveal — only hidden once .js-reveal is on <html>, and revealed
+   when the enclosing .section / .page-head gets .in from useReveal. */
+.js-reveal .reveal-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.reveal-up.revealed {
+.js-reveal .section.in .reveal-up,
+.js-reveal .page-head.in .reveal-up {
   opacity: 1;
   transform: translateY(0);
 }
