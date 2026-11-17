@@ -159,17 +159,20 @@ export default function Home() {
         </div>
         <ol className="steps" style={{ position: 'relative', zIndex: 1 }}>
           <li className="reveal-up stagger-1" style={{ position: 'relative' }}>
+            <span className="step-meta">Day 0</span>
             <h3 className="h3">Submit</h3>
             <p>Send the address, your numbers, photos and the closing timeline.</p>
             {/* Dashed connector to next step */}
             <span aria-hidden="true" style={{ position: 'absolute', top: '50%', right: '-32px', width: '32px', borderTop: '2px dashed var(--clr-accent, #f97316)', opacity: 0.3, pointerEvents: 'none' }} />
           </li>
           <li className="reveal-up stagger-2" style={{ position: 'relative' }}>
+            <span className="step-meta">Days 1-8</span>
             <h3 className="h3">Market</h3>
             <p>We check the numbers and send the deal to buyers in our network who buy that kind of property.</p>
             <span aria-hidden="true" style={{ position: 'absolute', top: '50%', right: '-32px', width: '32px', borderTop: '2px dashed var(--clr-accent, #f97316)', opacity: 0.3, pointerEvents: 'none' }} />
           </li>
           <li className="reveal-up stagger-3" style={{ position: 'relative' }}>
+            <span className="step-meta">To funding</span>
             <h3 className="h3">Coordinate</h3>
             <p>We line up the buyer, handle the assignment and work with title until it closes.</p>
           </li>

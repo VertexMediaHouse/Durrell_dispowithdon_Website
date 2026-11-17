@@ -4,6 +4,7 @@ import { preventSubmit } from '../lib/forms'
 import PageHead from '../components/PageHead'
 import Img from '../components/Img'
 import DealCard from '../components/DealCard'
+import DealTicket from '../components/DealTicket'
 import { img } from '../lib/images'
 import { deals, money, spread } from '../lib/deals'
 
@@ -101,6 +102,7 @@ export default function DealDetail() {
           </div>
 
           <aside className="stack-lg">
+            <DealTicket deal={deal} tag="DWD-1214" />
             <form className="card form" onSubmit={preventSubmit} style={{ gap: 20 }}>
               <div>
                 <h2 className="h3">Request a walkthrough</h2>

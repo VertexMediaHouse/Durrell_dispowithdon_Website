@@ -52,7 +52,7 @@ export default function Deals() {
       </section>
 
       <section className="wrap section">
-        <div className="cta">
+        <div className="cta-panel textured"><div className="cta">
           <div className="stack">
             <h2 className="h2">See new deals first</h2>
             <p className="lead">Registered buyers get matching deals by email or text before they're posted here.</p>
@@ -65,7 +65,7 @@ export default function Deals() {
               Talk to Don
             </Link>
           </div>
-        </div>
+        </div></div>
       </section>
     </>
   )

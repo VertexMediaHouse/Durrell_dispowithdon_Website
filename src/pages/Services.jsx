@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../lib/usePageTitle'
 import PageHead from '../components/PageHead'
 import Img from '../components/Img'
-import FeeSplitCalculator from '../components/FeeSplitCalculator'
+import PayoutTicket from '../components/PayoutTicket'
 import { img } from '../lib/images'
 
 const SERVICES = [
@@ -77,32 +77,51 @@ export default function Services() {
         </div>
         <ol className="steps">
           <li>
+            <span className="step-meta">Day 0 · 2 min</span>
             <h3 className="h3">Submit</h3>
             <p>Send the address, your contract price, your target buyer price and photos. It takes about two minutes.</p>
           </li>
           <li>
+            <span className="step-meta">Same day</span>
             <h3 className="h3">Review</h3>
             <p>Same day, we send back our honest read on value, the comps we checked and a plan for marketing it.</p>
           </li>
           <li>
+            <span className="step-meta">Days 1-8</span>
             <h3 className="h3">Market</h3>
             <p>The deal goes to the buyers in our network who buy in that area and that property type.</p>
           </li>
           <li>
+            <span className="step-meta">Funding day</span>
             <h3 className="h3">Close</h3>
             <p>We collect earnest money, sign the assignment and work with title through funding and your payout.</p>
           </li>
         </ol>
       </section>
 
-      <section className="wrap section">
-        <div className="split center">
-          <div className="stack">
-            <span className="kicker">Pricing</span>
-            <h2 className="h2">55% of the fee is yours</h2>
-            <p className="lead">No upfront fees, retainers or hidden costs. We get paid at closing, from the assignment fee.</p>
+      <section className="band section">
+        <div className="wrap split center">
+          <div className="stack-lg">
+            <div className="stack">
+              <span className="kicker">Pricing</span>
+              <h2 className="h2">55% of the fee is yours</h2>
+              <p className="lead">
+                One number, no asterisks. We get paid at closing, out of the assignment fee. If the deal never closes,
+                you never owe us anything.
+              </p>
+            </div>
+            <ul className="checks">
+              <li>No upfront fees, retainers or marketing invoices</li>
+              <li>Our 45% covers photos, video, buyer outreach and title coordination</li>
+              <li>Fee split written into the agreement before we market the deal</li>
+            </ul>
+            <div className="row">
+              <Link to="/submit-deal" className="btn btn-onband">
+                Submit a deal
+              </Link>
+            </div>
           </div>
-          <FeeSplitCalculator />
+          <PayoutTicket />
         </div>
       </section>
 
