@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
+import { useReveal } from './lib/useReveal'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Deals from './pages/Deals'
 import DealDetail from './pages/DealDetail'
@@ -10,21 +13,15 @@ import BuyersNetwork from './pages/BuyersNetwork'
 import Contact from './pages/Contact'
 
 export default function App() {
+  useReveal()
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        position: 'relative',
-        background: '#141414',
-        color: '#F4F4F2',
-        fontFamily: 'Inter, system-ui, sans-serif',
-      }}
-    >
+    <>
+      <a className="skip" href="#main-content">
+        Skip to content
+      </a>
       <ScrollToTop />
-      <main id="main-content" style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', width: '100%' }}>
+      <Header />
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/deals" element={<Deals />} />
@@ -37,6 +34,7 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
-    </div>
+      <Footer />
+    </>
   )
 }
