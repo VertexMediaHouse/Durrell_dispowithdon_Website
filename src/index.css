@@ -508,7 +508,12 @@ strong {
   border-top: 1px solid var(--line);
 }
 .stats > div {
-  padding: 28px 24px 0 0;
+  padding: 28px 24px;
+}
+/* Dividers as borders, not grid children — a child <span> takes a cell and
+   wraps the row. */
+.stats > div + div {
+  border-left: 1px solid var(--line);
 }
 .stats dt {
   order: 2;

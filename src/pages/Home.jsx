@@ -104,17 +104,14 @@ export default function Home() {
             <dt>Verified cash buyers</dt>
             <dd className="gradient-text">1,800+</dd>
           </div>
-          <span aria-hidden="true" style={{ width: '1px', alignSelf: 'stretch', background: 'linear-gradient(to bottom, transparent, var(--clr-accent, #f97316), transparent)', opacity: 0.3 }} />
           <div className="reveal-up stagger-2">
             <dt>Deals assigned since 2019</dt>
             <dd className="gradient-text">340+</dd>
           </div>
-          <span aria-hidden="true" style={{ width: '1px', alignSelf: 'stretch', background: 'linear-gradient(to bottom, transparent, var(--clr-accent, #f97316), transparent)', opacity: 0.3 }} />
           <div className="reveal-up stagger-3">
             <dt>Median days to assign</dt>
             <dd className="gradient-text">12</dd>
           </div>
-          <span aria-hidden="true" style={{ width: '1px', alignSelf: 'stretch', background: 'linear-gradient(to bottom, transparent, var(--clr-accent, #f97316), transparent)', opacity: 0.3 }} />
           <div className="reveal-up stagger-4">
             <dt>Fee split, in your favor</dt>
             <dd className="gradient-text">55/45</dd>
@@ -162,20 +159,17 @@ export default function Home() {
         </div>
         <ol className="steps" style={{ position: 'relative', zIndex: 1 }}>
           <li className="reveal-up stagger-1" style={{ position: 'relative' }}>
-            <span aria-hidden="true" className="text-glow" style={{ position: 'absolute', top: '-6px', left: '-4px', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.08em', opacity: 0.45 }}>STEP 01</span>
             <h3 className="h3">Submit</h3>
             <p>Send the address, your numbers, photos and the closing timeline.</p>
             {/* Dashed connector to next step */}
             <span aria-hidden="true" style={{ position: 'absolute', top: '50%', right: '-32px', width: '32px', borderTop: '2px dashed var(--clr-accent, #f97316)', opacity: 0.3, pointerEvents: 'none' }} />
           </li>
           <li className="reveal-up stagger-2" style={{ position: 'relative' }}>
-            <span aria-hidden="true" className="text-glow" style={{ position: 'absolute', top: '-6px', left: '-4px', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.08em', opacity: 0.45 }}>STEP 02</span>
             <h3 className="h3">Market</h3>
             <p>We check the numbers and send the deal to buyers in our network who buy that kind of property.</p>
             <span aria-hidden="true" style={{ position: 'absolute', top: '50%', right: '-32px', width: '32px', borderTop: '2px dashed var(--clr-accent, #f97316)', opacity: 0.3, pointerEvents: 'none' }} />
           </li>
           <li className="reveal-up stagger-3" style={{ position: 'relative' }}>
-            <span aria-hidden="true" className="text-glow" style={{ position: 'absolute', top: '-6px', left: '-4px', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.08em', opacity: 0.45 }}>STEP 03</span>
             <h3 className="h3">Coordinate</h3>
             <p>We line up the buyer, handle the assignment and work with title until it closes.</p>
           </li>
